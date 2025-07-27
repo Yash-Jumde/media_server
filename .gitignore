@@ -1,0 +1,6 @@
+/.env
+/converted_videos
+/media
+/node_modules
+/transcoded
+/adaptive

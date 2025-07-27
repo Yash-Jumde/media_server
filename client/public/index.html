@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Media Server</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Media Library</h1>
+            <input type="text" id="search" placeholder="Search Media...">
+        </header>
+
+        <main id="content">
+            <div class="media-grid"></div>
+        </main>
+
+        <div id="player-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="player-header">
+                    <button id="back-button">Back to Library</button>
+                </div>
+                <div class="player-controls"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
