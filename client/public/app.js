@@ -291,9 +291,22 @@ class MediaPlayer {
                 <div>
             `;
 
-            if(file.type === 'video' && file.thumbnail){
+            if(file.type === 'image'){
+                const token = localStorage.getItem('token');
+                thumbnailHTML = `
+                    <div class="media-thumbnail" style="background-image: url('/images/${encodeURIComponent(file.name)}?token=${token}'); background-size: cover; background-position: center;">
+                        <span class="media-type">${file.type}</span>
+                    </div>
+                `;
+            } else if(file.type === 'video' && file.thumbnail){
                 thumbnailHTML = `
                     <div class="media-thumbnail" style="background-image: url('${file.thumbnail}'); background-size: cover; background-position: center;">
+                        <span class="media-type">${file.type}</span>
+                    </div>
+                `;
+            } else if(file.type === 'audio') {
+                thumbnailHTML = `
+                    <div class="media-thumbnail" style="background-color: #344; display: flex; align-items: center; justify-content: center;">
                         <span class="media-type">${file.type}</span>
                     </div>
                 `;
@@ -308,7 +321,7 @@ class MediaPlayer {
             `;
 
             mediaItem.addEventListener('click', () => {
-                if (file.type === 'video' || file.type === 'audio'){
+                if (file.type === 'video' || file.type === 'audio' || file.type === 'image'){
                     this.play(file);
                 }
             });

@@ -233,11 +233,6 @@ kbd {
     background-color: #344;
 }
 
-.media-item.image .media-thumbnail::after {
-    content: "🖼️";
-    font-size: 40px;
-}
-
 .media-item.audio .media-thumbnail::after {
     content: "🎵";
     font-size: 40px;
