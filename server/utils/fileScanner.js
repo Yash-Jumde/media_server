@@ -9,6 +9,13 @@ const supportedFormats = {
     image: ['.jpg', '.jpeg', '.png', '.gif', '.webp']
 };
 
+const categoryMapping = {
+    'movies': 'Movies',
+    'tv_shows': 'TV Shows',
+    'images': 'Images',
+    'audio': 'Audio'
+};
+
 const scanDirectory = async (dirPath) => {
     const files = [];
     const items = await fs.readdir(dirPath, {withFileTypes: true});
@@ -42,40 +49,88 @@ const scanDirectory = async (dirPath) => {
     return files;
 };
 
+// New function to scan directories and organize by categories
+const scanDirectoryWithCategories = async (dirPath) => {
+    const categories = {};
+   
+    try {
+        const items = await fs.readdir(dirPath, {withFileTypes: true});
+       
+        for (const item of items) {
+            if (item.isDirectory()) {
+                const categoryKey = item.name.toLowerCase();
+               
+                // Only process known category directories
+                if (categoryMapping[categoryKey]) {
+                    const categoryPath = path.join(dirPath, item.name);
+                    const files = await scanDirectory(categoryPath);
+                   
+                    // Add category information to each file
+                    const filesWithCategory = files.map(file => ({
+                        ...file,
+                        category: categoryKey,
+                        categoryDisplay: categoryMapping[categoryKey]
+                    }));
+                   
+                    categories[categoryKey] = {
+                        name: categoryMapping[categoryKey],
+                        files: filesWithCategory
+                    };
+                }
+            }
+        }
+       
+        // Return categories in the desired order
+        const orderedCategories = {};
+        const order = ['movies', 'tv_shows', 'images', 'audio'];
+       
+        order.forEach(key => {
+            if (categories[key]) {
+                orderedCategories[key] = categories[key];
+            }
+        });
+       
+        return orderedCategories;
+    } catch (error) {
+        console.error('Error scanning directory with categories:', error);
+        return {};
+    }
+};
+
 // New function to preprocess media files for caching
 const preprocessMedia = async (files) => {
     const transcodedDir = path.join(__dirname, '../../transcoded');
     const adaptiveDir = path.join(__dirname, '../../adaptive');
-    
+   
     // Create directories if they don't exist
     if (!fsSync.existsSync(transcodedDir)) {
         await fs.mkdir(transcodedDir, { recursive: true });
     }
-    
+   
     if (!fsSync.existsSync(adaptiveDir)) {
         await fs.mkdir(adaptiveDir, { recursive: true });
     }
-    
+   
     console.log(`Starting background preprocessing of ${files.length} files...`);
-    
+   
     // Process video files
     for (const file of files) {
         if (file.type === 'audio') {
             const ext = path.extname(file.path).toLowerCase();
             const baseName = path.basename(file.path, ext);
             const coverArtDir = path.join(__dirname, '../../covers');
-            
+           
             // Create directory if it doesn't exist
             if (!fsSync.existsSync(coverArtDir)) {
                 await fs.mkdir(coverArtDir, { recursive: true });
             }
-            
+           
             const coverPath = path.join(coverArtDir, `${baseName}.jpg`);
-            
+           
             // Only extract cover art if not already done
             if (!fsSync.existsSync(coverPath)) {
                 console.log(`Extracting cover art for: ${file.name}`);
-                exec(`nice -n 19 ffmpeg -i "${file.path}" -an -vcodec copy "${coverPath}"`, 
+                exec(`nice -n 19 ffmpeg -i "${file.path}" -an -vcodec copy "${coverPath}"`,
                     (error) => {
                         // Ignore errors as not all audio files have embedded artwork
                         if (!error) {
@@ -88,25 +143,25 @@ const preprocessMedia = async (files) => {
         else if (file.type === 'video') {
             const ext = path.extname(file.path).toLowerCase();
             const baseName = path.basename(file.path, ext);
-            
+           
             // Skip already supported formats for direct transcoding
             if (['.mp4', '.webm'].includes(ext)) {
                 continue;
             }
-            
+           
             const transcodedPath = path.join(transcodedDir, `${baseName}.mp4`);
             const adaptivePath = path.join(adaptiveDir, baseName);
-            
+           
             // Create folder for adaptive streaming files
             if (!fsSync.existsSync(adaptivePath)) {
                 await fs.mkdir(adaptivePath, { recursive: true });
             }
-            
+           
             // Only transcode if not already done
             if (!fsSync.existsSync(transcodedPath)) {
                 console.log(`Background transcoding: ${file.name}`);
                 // Use a lower-priority subprocess for MP4 version
-                exec(`nice -n 19 ffmpeg -i "${file.path}" -c:v libx264 -preset medium -crf 22 -c:a aac -b:a 128k "${transcodedPath}"`, 
+                exec(`nice -n 19 ffmpeg -i "${file.path}" -c:v libx264 -preset medium -crf 22 -c:a aac -b:a 128k "${transcodedPath}"`,
                     (error) => {
                         if (error) {
                             console.error(`Error transcoding ${file.name}:`, error);
@@ -116,7 +171,7 @@ const preprocessMedia = async (files) => {
                     }
                 );
             }
-            
+           
             // Check if adaptive streaming files exist
             const hlsPlaylist = path.join(adaptivePath, 'playlist.m3u8');
             if (!fsSync.existsSync(hlsPlaylist)) {
@@ -133,8 +188,8 @@ const preprocessMedia = async (files) => {
             }
         }
     }
-    
+   
     console.log("Background preprocessing initiated. This will continue in the background.");
 };
 
-module.exports = { scanDirectory, supportedFormats, preprocessMedia };
+module.exports = { scanDirectory, scanDirectoryWithCategories, supportedFormats, preprocessMedia };

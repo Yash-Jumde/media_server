@@ -2,7 +2,8 @@ class MediaPlayer {
     constructor() {
         this.player = document.getElementById('video-player');
         this.modal = document.getElementById('player-modal');
-        this.mediaGrid = document.querySelector('.media-grid');
+        this.mediaContainer = document.querySelector('#content');
+        this.categories = {};
         this.setupEventListeners();
         this.addKeyboardShortcutsInfo();
         this.checkAuth();
@@ -14,7 +15,7 @@ class MediaPlayer {
             window.location.href = '/login.html';
             return;
         }
-        
+       
         this.loadMedia();
     }
 
@@ -37,7 +38,7 @@ class MediaPlayer {
         document.addEventListener('keydown', (e) => {
             // Only process shortcuts when video player is visible
             if (this.modal.classList.contains('hidden')) return;
-            
+           
             switch(e.key.toLowerCase()) {
                 case 'escape':
                     this.close();
@@ -119,16 +120,16 @@ class MediaPlayer {
     loadSubtitles(mediaFile) {
         const token = localStorage.getItem('token');
         const videoElement = this.player;
-        
+       
         // Remove any existing subtitle tracks
         while (videoElement.firstChild) {
             videoElement.removeChild(videoElement.firstChild);
         }
-        
+       
         // Base filename without extension
         const baseFilename = mediaFile.name.substring(0, mediaFile.name.lastIndexOf('.'));
         const subtitleUrl = `/subtitles/${encodeURIComponent(baseFilename)}?token=${token}`;
-        
+       
         // Check if subtitle file exists using HEAD request
         fetch(subtitleUrl, {
             method: 'HEAD',
@@ -145,10 +146,10 @@ class MediaPlayer {
                 track.srclang = 'en';     // Default language
                 track.src = subtitleUrl;
                 track.default = true;     // Make this track default
-                
+               
                 // Add the track to the video element
                 videoElement.appendChild(track);
-                
+               
                 console.log('Subtitles loaded successfully');
             } else {
                 console.log('No subtitle file found for this video');
@@ -159,78 +160,77 @@ class MediaPlayer {
         });
     }
 
-
     play(mediaFile) {
         const token = localStorage.getItem('token');
         const playerContainer = document.querySelector('.modal-content');
-        
+       
         // Remove all existing media elements
         const oldContainers = document.querySelectorAll('.video-container, .image-container, .audio-container');
         oldContainers.forEach(container => container.remove());
-        
+       
         // Create appropriate container based on media type
         if (mediaFile.type === 'video') {
             // Create container for our video player
             const videoContainer = document.createElement('div');
             videoContainer.className = 'video-container';
             playerContainer.appendChild(videoContainer);
-            
+           
             // Create video element
             const video = document.createElement('video');
             video.id = 'video-player';
             video.controls = true;
             video.crossOrigin = 'anonymous';
-            
+           
             // Add the video to the container
             videoContainer.appendChild(video);
             this.player = video;
-            
+           
             // Set source and play
             video.src = `/stream/${encodeURIComponent(mediaFile.name)}?token=${token}`;
             this.loadSubtitles(mediaFile);
             video.play().catch(err => console.error('Direct play error:', err));
-            
+           
         } else if (mediaFile.type === 'image') {
             // Create container for our image viewer
             const imageContainer = document.createElement('div');
             imageContainer.className = 'image-container';
             playerContainer.appendChild(imageContainer);
-            
+           
             // Create image element
             const img = document.createElement('img');
             img.id = 'image-viewer';
             img.src = `/images/${encodeURIComponent(mediaFile.name)}?token=${token}`;
             img.alt = mediaFile.name;
-            
+           
             // Add the image to the container
             imageContainer.appendChild(img);
-            
+           
         } else if (mediaFile.type === 'audio') {
             // Create container for our audio player
             const audioContainer = document.createElement('div');
             audioContainer.className = 'audio-container';
             playerContainer.appendChild(audioContainer);
-            
+           
             // Create audio element
             const audio = document.createElement('audio');
             audio.id = 'audio-player';
             audio.controls = true;
-            
+           
             // Add the audio to the container
             audioContainer.appendChild(audio);
             this.player = audio;
-            
+           
             // Create album art placeholder
             const albumArt = document.createElement('div');
             albumArt.className = 'album-art';
             albumArt.innerHTML = `<span class="music-icon">🎵</span>`;
             audioContainer.appendChild(albumArt);
-            
+           
             // Set source and play
             audio.src = `/stream/${encodeURIComponent(mediaFile.name)}?token=${token}`;
             audio.play().catch(err => console.error('Direct play error:', err));
         }
-        
+       
         // Show the modal
         this.modal.classList.remove('hidden');
     }
@@ -241,7 +241,7 @@ class MediaPlayer {
             if (this.player.pause) {
                 this.player.pause();
             }
-            
+           
             // Clean up HLS instance if it exists
             if (this.hls) {
                 this.hls.destroy();
@@ -259,91 +259,133 @@ class MediaPlayer {
                     'Authorization': `Bearer ${token}`
                 }
             });
-            
+           
             if (response.status === 401 || response.status === 403) {
                 // Token invalid or expired
                 localStorage.removeItem('token');
                 window.location.href = '/login.html';
                 return;
             }
-            
+           
             if(!response.ok) throw new Error('Failed to fetch media');
 
-            const mediaFiles = await response.json();
-            this.renderMediaGrid(mediaFiles);
+            this.categories = await response.json();
+            this.renderCategorizedMedia();
 
         } catch (error) {
             console.error('Error loading media:', error);
         }
     }
 
-    renderMediaGrid(mediaFiles) {
-        this.mediaGrid.innerHTML = '';
+    renderCategorizedMedia() {
+        this.mediaContainer.innerHTML = '';
+       
+        // Create sections for each category
+        Object.entries(this.categories).forEach(([categoryKey, category]) => {
+            if (category.files.length === 0) return; // Skip empty categories
+           
+            // Create category section
+            const categorySection = document.createElement('div');
+            categorySection.className = 'category-section';
+            categorySection.setAttribute('data-category', categoryKey);
+           
+            // Create category header
+            const categoryHeader = document.createElement('h2');
+            categoryHeader.className = 'category-title';
+            categoryHeader.textContent = category.name;
+            categorySection.appendChild(categoryHeader);
+           
+            // Create horizontal scrolling container
+            const mediaRow = document.createElement('div');
+            mediaRow.className = 'media-row';
+           
+            // Add media items to the row
+            category.files.forEach(file => {
+                const mediaItem = this.createMediaItem(file);
+                mediaRow.appendChild(mediaItem);
+            });
+           
+            categorySection.appendChild(mediaRow);
+            this.mediaContainer.appendChild(categorySection);
+        });
+    }
 
-        mediaFiles.forEach(file => {
-            const mediaItem = document.createElement('div');
-            mediaItem.className = `media-item ${file.type}`;
+    createMediaItem(file) {
+        const mediaItem = document.createElement('div');
+        mediaItem.className = `media-item ${file.type}`;
+        mediaItem.setAttribute('data-filename', file.name.toLowerCase());
 
-            // Creating thumbnails
-            let thumbnailHTML = `
-                <div class="media-thumbnail">
-                    <span class="media-type"> ${file.type}</span>
-                <div>
-            `;
+        // Creating thumbnails
+        let thumbnailHTML = `
+            <div class="media-thumbnail">
+                <span class="media-type">${file.type}</span>
+            </div>
+        `;
 
-            if(file.type === 'image'){
-                const token = localStorage.getItem('token');
-                thumbnailHTML = `
-                    <div class="media-thumbnail" style="background-image: url('/images/${encodeURIComponent(file.name)}?token=${token}'); background-size: cover; background-position: center;">
-                        <span class="media-type">${file.type}</span>
-                    </div>
-                `;
-            } else if(file.type === 'video' && file.thumbnail){
-                thumbnailHTML = `
-                    <div class="media-thumbnail" style="background-image: url('${file.thumbnail}'); background-size: cover; background-position: center;">
-                        <span class="media-type">${file.type}</span>
-                    </div>
-                `;
-            } else if(file.type === 'audio') {
-                thumbnailHTML = `
-                    <div class="media-thumbnail" style="background-color: #344; display: flex; align-items: center; justify-content: center;">
-                        <span class="media-type">${file.type}</span>
-                    </div>
-                `;
-            }
-
-            mediaItem.innerHTML = `
-                ${thumbnailHTML}
-                <div class="media-info">
-                    <h3>${file.name}</h3>
-                    <p>${this.formatFileSize(file.size)}</p>
+        if(file.type === 'image'){
+            const token = localStorage.getItem('token');
+            thumbnailHTML = `
+                <div class="media-thumbnail" style="background-image: url('/images/${encodeURIComponent(file.name)}?token=${token}'); background-size: cover; background-position: center;">
+                    <span class="media-type">${file.type}</span>
                 </div>
             `;
+        } else if(file.type === 'video' && file.thumbnail){
+            thumbnailHTML = `
+                <div class="media-thumbnail" style="background-image: url('${file.thumbnail}'); background-size: cover; background-position: center;">
+                    <span class="media-type">${file.type}</span>
+                </div>
+            `;
+        } else if(file.type === 'audio') {
+            thumbnailHTML = `
+                <div class="media-thumbnail" style="background-color: #344; display: flex; align-items: center; justify-content: center;">
+                    <span class="media-type">${file.type}</span>
+                </div>
+            `;
+        }
 
-            mediaItem.addEventListener('click', () => {
-                if (file.type === 'video' || file.type === 'audio' || file.type === 'image'){
-                    this.play(file);
-                }
-            });
+        mediaItem.innerHTML = `
+            ${thumbnailHTML}
+            <div class="media-info">
+                <h3>${file.name}</h3>
+                <p>${this.formatFileSize(file.size)}</p>
+            </div>
+        `;
 
-            this.mediaGrid.appendChild(mediaItem);
+        mediaItem.addEventListener('click', () => {
+            if (file.type === 'video' || file.type === 'audio' || file.type === 'image'){
+                this.play(file);
+            }
         });
+
+        return mediaItem;
     }
 
     filterMedia(searchTerm) {
-        const items = this.mediaGrid.querySelectorAll('.media-item');
+        const categories = this.mediaContainer.querySelectorAll('.category-section');
         searchTerm = searchTerm.toLowerCase();
 
-        items.forEach(item => {
-            const title = item.querySelector('h3').textContent.toLowerCase();
-            if(title.includes(searchTerm)) {
-                item.style.display = 'block';
+        categories.forEach(categorySection => {
+            const items = categorySection.querySelectorAll('.media-item');
+            let visibleItems = 0;
+
+            items.forEach(item => {
+                const filename = item.getAttribute('data-filename');
+                if(filename.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    visibleItems++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Hide category section if no items are visible
+            if (visibleItems === 0) {
+                categorySection.style.display = 'none';
             } else {
-                item.style.display = 'none';
+                categorySection.style.display = 'block';
             }
         });
     }
-
 
     addKeyboardShortcutsInfo() {
         const shortcutsInfo = document.createElement('div');
@@ -361,12 +403,12 @@ class MediaPlayer {
                 <li><kbd>↓</kbd> - Volume down</li>
             </ul>
         `;
-        
+       
         const infoButton = document.createElement('button');
         infoButton.className = 'info-button';
         infoButton.textContent = 'ⓘ Keyboard Shortcuts';
         infoButton.onclick = () => shortcutsInfo.classList.toggle('visible');
-        
+       
         document.querySelector('.player-header').appendChild(infoButton);
         document.querySelector('.modal-content').appendChild(shortcutsInfo);
     }
