@@ -407,3 +407,26 @@ kbd {
     outline: 2px solid #e50914;
     outline-offset: 2px;
 }
+
+.clickable-category {
+    cursor: pointer;
+    color: white;
+    transition: color 0.2s;
+}
+.clickable-category:hover {
+    color: #f40612;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 1rem;
+    overflow-y: auto;
+    max-height: 80vh; /* Adjust as needed */
+}
+
+.media-grid .media-item {
+    min-width: 0;
+    max-width: 100%;
+}

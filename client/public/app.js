@@ -291,7 +291,10 @@ class MediaPlayer {
            
             // Create category header
             const categoryHeader = document.createElement('h2');
-            categoryHeader.className = 'category-title';
+            categoryHeader.classList.add('category-title', 'clickable-category');
+            categoryHeader.addEventListener('click', () => {
+                this.filterByCategory(categoryKey);
+            });
             categoryHeader.textContent = category.name;
             categorySection.appendChild(categoryHeader);
            
@@ -308,6 +311,59 @@ class MediaPlayer {
             categorySection.appendChild(mediaRow);
             this.mediaContainer.appendChild(categorySection);
         });
+    }
+
+    renderCategoryAsGrid(categoryKey) {
+        // Clear the container
+        this.mediaContainer.innerHTML = '';
+
+        const category = this.categories[categoryKey];
+        if (!category) return;
+
+        // Category header
+        const categoryHeader = document.createElement('h2');
+        categoryHeader.className = 'category-title';
+        categoryHeader.textContent = category.name;
+        this.mediaContainer.appendChild(categoryHeader);
+
+        // Vertical grid container
+        const grid = document.createElement('div');
+        grid.className = 'media-grid';
+
+        category.files.forEach(file => {
+            const mediaItem = this.createMediaItem(file);
+            grid.appendChild(mediaItem);
+        });
+
+        this.mediaContainer.appendChild(grid);
+
+        // Show All button
+        this.showAllButton(categoryKey);
+    }
+
+    filterByCategory(categoryKey) {
+        this.renderCategoryAsGrid(categoryKey);
+    }
+
+    showAllButton(currentCategoryKey) {
+        // Remove existing button if present
+        let btn = document.getElementById('show-all-btn');
+        if (btn) btn.remove();
+
+        btn = document.createElement('button');
+        btn.id = 'show-all-btn';
+        btn.textContent = 'Show All Categories';
+        btn.className = 'info-button';
+        btn.style.margin = '20px';
+
+        btn.onclick = () => {
+            // Show all categories
+            const categories = this.mediaContainer.querySelectorAll('.category-section');
+            this.renderCategorizedMedia();
+        };
+
+        // Insert at the top of the content area
+        this.mediaContainer.prepend(btn);
     }
 
     createMediaItem(file) {
