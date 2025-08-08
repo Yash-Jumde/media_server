@@ -51,17 +51,13 @@ The Personal Media Server is a lightweight, self-hosted application that allows 
   - [Setting up Development Environment](null)
   - [Code Structure](null)
   - [Contributing Guidelines](null)
-11. [Deployment Guide](null)
-  - [Production Deployment](null)
-12. [Troubleshooting](null)
+11. [Troubleshooting](null)
   - [Common Issues](null)
   - [Debugging](null)
-13. [Security](null)
+12. [Security](null)
   - [Authentication and Authorization](null)
   - [Data Protection](null)
-14. [Performance and Optimization](null)
-  - [Performance Tuning](null)
-15. [FAQ](null)
+13. [FAQ](null)
 ## 3. Installation Guide
 ### Prerequisites
 #### System Requirements
