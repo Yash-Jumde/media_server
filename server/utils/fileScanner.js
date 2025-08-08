@@ -49,7 +49,124 @@ const scanDirectory = async (dirPath) => {
     return files;
 };
 
-// New function to scan directories and organize by categories
+// Enhanced function to scan TV shows with better series detection
+const scanTvShowsDirectory = async (tvShowsPath) => {
+    const series = {};
+    
+    try {
+        const items = await fs.readdir(tvShowsPath, {withFileTypes: true});
+        
+        for (const item of items) {
+            if (item.isDirectory()) {
+                // Each directory is likely a TV series
+                const seriesName = item.name;
+                const seriesPath = path.join(tvShowsPath, item.name);
+                const episodes = await scanDirectory(seriesPath);
+                
+                if (episodes.length > 0) {
+                    series[seriesName] = {
+                        name: seriesName,
+                        path: seriesPath,
+                        episodes: episodes.map(ep => ({
+                            ...ep,
+                            seriesName: seriesName
+                        })),
+                        type: 'tv_series'
+                    };
+                }
+            } else {
+                // Files directly in TV shows folder - try to group by series name
+                const ext = path.extname(item.name).toLowerCase();
+                if (supportedFormats.video.includes(ext)) {
+                    const seriesName = extractSeriesNameFromFile(item.name);
+                    const filePath = path.join(tvShowsPath, item.name);
+                    const fileStat = await fs.stat(filePath);
+                    
+                    if (!series[seriesName]) {
+                        series[seriesName] = {
+                            name: seriesName,
+                            path: tvShowsPath,
+                            episodes: [],
+                            type: 'tv_series'
+                        };
+                    }
+                    
+                    series[seriesName].episodes.push({
+                        name: item.name,
+                        path: filePath,
+                        type: 'video',
+                        size: fileStat.size,
+                        seriesName: seriesName
+                    });
+                }
+            }
+        }
+        
+        // Sort episodes within each series
+        Object.values(series).forEach(s => {
+            s.episodes.sort((a, b) => {
+                // Try to sort by episode number if possible
+                const aMatch = a.name.match(/S(\d+)E(\d+)/i) || a.name.match(/(\d+)x(\d+)/i);
+                const bMatch = b.name.match(/S(\d+)E(\d+)/i) || b.name.match(/(\d+)x(\d+)/i);
+                
+                if (aMatch && bMatch) {
+                    const aSeason = parseInt(aMatch[1]);
+                    const aEpisode = parseInt(aMatch[2]);
+                    const bSeason = parseInt(bMatch[1]);
+                    const bEpisode = parseInt(bMatch[2]);
+                    
+                    if (aSeason !== bSeason) {
+                        return aSeason - bSeason;
+                    }
+                    return aEpisode - bEpisode;
+                }
+                
+                // Fallback to alphabetical sorting
+                return a.name.localeCompare(b.name);
+            });
+        });
+        
+    } catch (error) {
+        console.error('Error scanning TV shows directory:', error);
+    }
+    
+    return series;
+};
+
+// Function to extract series name from filename
+const extractSeriesNameFromFile = (filename) => {
+    // Remove file extension
+    const nameWithoutExt = path.parse(filename).name;
+    
+    // Try various patterns to extract series name
+    const patterns = [
+        /^(.+?)\s+S\d+E\d+/i,          // "Series Name S01E01"
+        /^(.+?)\s+Season\s+\d+/i,       // "Series Name Season 1"
+        /^(.+?)\s+\d+x\d+/i,           // "Series Name 1x01"
+        /^(.+?)\s+-\s+S\d+E\d+/i,      // "Series Name - S01E01"
+        /^(.+?)\s+\[\d+x\d+\]/i,       // "Series Name [1x01]"
+        /^(.+?)\s+\(\d{4}\)/i,         // "Series Name (2023)"
+    ];
+    
+    for (const pattern of patterns) {
+        const match = nameWithoutExt.match(pattern);
+        if (match) {
+            return match[1].trim();
+        }
+    }
+    
+    // Fallback: use everything before first number sequence or special character
+    const fallbackMatch = nameWithoutExt.match(/^(.+?)(?:\s+\d+|\s+S\d+|\s+-|\s+\[|\s+\()/i);
+    if (fallbackMatch) {
+        return fallbackMatch[1].trim();
+    }
+    
+    // Last resort: use the first few words
+    const words = nameWithoutExt.split(/[\s\-\.\_]+/);
+    return words.slice(0, Math.min(3, words.length)).join(' ');
+};
+
+// Updated function to scan directories and organize by categories
 const scanDirectoryWithCategories = async (dirPath) => {
     const categories = {};
    
@@ -63,19 +180,43 @@ const scanDirectoryWithCategories = async (dirPath) => {
                 // Only process known category directories
                 if (categoryMapping[categoryKey]) {
                     const categoryPath = path.join(dirPath, item.name);
-                    const files = await scanDirectory(categoryPath);
-                   
-                    // Add category information to each file
-                    const filesWithCategory = files.map(file => ({
-                        ...file,
-                        category: categoryKey,
-                        categoryDisplay: categoryMapping[categoryKey]
-                    }));
-                   
-                    categories[categoryKey] = {
-                        name: categoryMapping[categoryKey],
-                        files: filesWithCategory
-                    };
+                    
+                    if (categoryKey === 'tv_shows') {
+                        // Special handling for TV shows
+                        const tvSeries = await scanTvShowsDirectory(categoryPath);
+                        const tvFiles = [];
+                        
+                        // Convert series object to flat array for compatibility
+                        Object.values(tvSeries).forEach(series => {
+                            // Add series info to each episode
+                            series.episodes.forEach(episode => {
+                                episode.category = categoryKey;
+                                episode.categoryDisplay = categoryMapping[categoryKey];
+                                episode.seriesName = series.name;
+                            });
+                            tvFiles.push(...series.episodes);
+                        });
+                        
+                        categories[categoryKey] = {
+                            name: categoryMapping[categoryKey],
+                            files: tvFiles,
+                            series: tvSeries // Keep series structure for frontend
+                        };
+                    } else {
+                        // Regular scanning for other categories
+                        const files = await scanDirectory(categoryPath);
+                        
+                        const filesWithCategory = files.map(file => ({
+                            ...file,
+                            category: categoryKey,
+                            categoryDisplay: categoryMapping[categoryKey]
+                        }));
+                        
+                        categories[categoryKey] = {
+                            name: categoryMapping[categoryKey],
+                            files: filesWithCategory
+                        };
+                    }
                 }
             }
         }
@@ -94,6 +235,24 @@ const scanDirectoryWithCategories = async (dirPath) => {
     } catch (error) {
         console.error('Error scanning directory with categories:', error);
         return {};
+    }
+};
+
+// Function to get TV series details by name
+const getTvSeriesDetails = async (mediaDir, seriesName) => {
+    try {
+        const tvShowsPath = path.join(mediaDir, 'tv_shows');
+        const series = await scanTvShowsDirectory(tvShowsPath);
+        
+        // Find series by name (case insensitive)
+        const foundSeries = Object.values(series).find(s => 
+            s.name.toLowerCase() === seriesName.toLowerCase()
+        );
+        
+        return foundSeries || null;
+    } catch (error) {
+        console.error('Error getting TV series details:', error);
+        return null;
     }
 };
 
@@ -192,4 +351,12 @@ const preprocessMedia = async (files) => {
     console.log("Background preprocessing initiated. This will continue in the background.");
 };
 
-module.exports = { scanDirectory, scanDirectoryWithCategories, supportedFormats, preprocessMedia };
+module.exports = { 
+    scanDirectory, 
+    scanDirectoryWithCategories, 
+    scanTvShowsDirectory,
+    getTvSeriesDetails,
+    extractSeriesNameFromFile,
+    supportedFormats, 
+    preprocessMedia 
+};

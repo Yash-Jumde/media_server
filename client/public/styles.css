@@ -143,6 +143,144 @@ header {
     color: #aaa;
 }
 
+/* TV Series specific styles */
+.tv-series .episode-count {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* TV Series episodes view */
+.tv-series-header {
+    padding: 2rem 1rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.back-to-categories-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-to-categories-btn:hover {
+    background-color: #555;
+    transform: translateX(-2px);
+}
+
+.series-title {
+    font-size: 2.5rem;
+    margin: 0;
+    color: white;
+    font-weight: bold;
+}
+
+.episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.episode-item {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.episode-item:hover {
+    background-color: #2a2a2a;
+    border-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.episode-thumbnail {
+    width: 120px;
+    height: 68px;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.episode-number {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.play-button {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.episode-item:hover .play-button {
+    opacity: 1;
+}
+
+.episode-info {
+    flex: 1;
+}
+
+.episode-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    line-height: 1.3;
+}
+
+.episode-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #aaa;
+}
+
 /* Modal styles */
 .modal {
     position: fixed;
@@ -338,6 +476,35 @@ kbd {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.media-item.tv-series .media-thumbnail {
+    background-color: #1a1a2e;
+    background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+}
+
+.clickable-category {
+    cursor: pointer;
+    color: white;
+    transition: color 0.2s;
+}
+
+.clickable-category:hover {
+    color: #f40612;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 1rem;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.media-grid .media-item {
+    min-width: 0;
+    max-width: 100%;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .category-section {
@@ -380,6 +547,52 @@ kbd {
     .music-icon {
         font-size: 80px;
     }
+
+    /* TV Series responsive styles */
+    .episodes-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .episode-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .episode-thumbnail {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    .series-title {
+        font-size: 1.8rem;
+    }
+
+    .tv-series-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .episodes-grid {
+        padding: 0.5rem;
+    }
+
+    .episode-item {
+        padding: 0.75rem;
+    }
+
+    .episode-info h3 {
+        font-size: 14px;
+    }
+
+    .episode-info p {
+        font-size: 11px;
+    }
 }
 
 /* Loading states and animations */
@@ -396,37 +609,33 @@ kbd {
     animation: fadeIn 0.3s ease-out;
 }
 
+.episode-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.tv-series-header {
+    animation: fadeIn 0.4s ease-out;
+}
+
 /* Focus styles for accessibility */
-.media-item:focus {
+.media-item:focus,
+.episode-item:focus {
     outline: 2px solid #e50914;
     outline-offset: 2px;
 }
 
 #back-button:focus,
-.info-button:focus {
+.info-button:focus,
+.back-to-categories-btn:focus {
     outline: 2px solid #e50914;
     outline-offset: 2px;
 }
 
-.clickable-category {
-    cursor: pointer;
-    color: white;
-    transition: color 0.2s;
-}
-.clickable-category:hover {
-    color: #f40612;
+/* Enhanced hover effects for episodes */
+.episode-item:hover .episode-thumbnail {
+    transform: scale(1.02);
 }
 
-.media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem 1rem;
-    overflow-y: auto;
-    max-height: 80vh; /* Adjust as needed */
-}
-
-.media-grid .media-item {
-    min-width: 0;
-    max-width: 100%;
+.episode-thumbnail {
+    transition: transform 0.3s ease;
 }

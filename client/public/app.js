@@ -4,6 +4,8 @@ class MediaPlayer {
         this.modal = document.getElementById('player-modal');
         this.mediaContainer = document.querySelector('#content');
         this.categories = {};
+        this.currentView = 'categories'; // 'categories', 'tv-show-episodes'
+        this.currentTvShow = null;
         this.setupEventListeners();
         this.addKeyboardShortcutsInfo();
         this.checkAuth();
@@ -75,7 +77,6 @@ class MediaPlayer {
 
     toggleFullscreen() {
         if (!document.fullscreenElement) {
-            // If we're not in fullscreen mode, enter fullscreen
             if (this.player.requestFullscreen) {
                 this.player.requestFullscreen();
             } else if (this.player.webkitRequestFullscreen) {
@@ -84,7 +85,6 @@ class MediaPlayer {
                 this.player.msRequestFullscreen();
             }
         } else {
-            // If we are in fullscreen mode, exit fullscreen
             if (document.exitFullscreen) {
                 document.exitFullscreen();
             } else if (document.webkitExitFullscreen) {
@@ -112,7 +112,6 @@ class MediaPlayer {
     }
 
     changeVolume(delta) {
-        // Ensure volume stays between 0 and 1
         let newVolume = Math.max(0, Math.min(1, this.player.volume + delta));
         this.player.volume = newVolume;
     }
@@ -121,16 +120,13 @@ class MediaPlayer {
         const token = localStorage.getItem('token');
         const videoElement = this.player;
        
-        // Remove any existing subtitle tracks
         while (videoElement.firstChild) {
             videoElement.removeChild(videoElement.firstChild);
         }
        
-        // Base filename without extension
         const baseFilename = mediaFile.name.substring(0, mediaFile.name.lastIndexOf('.'));
         const subtitleUrl = `/subtitles/${encodeURIComponent(baseFilename)}?token=${token}`;
        
-        // Check if subtitle file exists using HEAD request
         fetch(subtitleUrl, {
             method: 'HEAD',
             headers: {
@@ -139,17 +135,14 @@ class MediaPlayer {
         })
         .then(response => {
             if (response.ok) {
-                // Subtitle file exists, add it to the video
                 const track = document.createElement('track');
                 track.kind = 'subtitles';
-                track.label = 'English';  // Default label
-                track.srclang = 'en';     // Default language
+                track.label = 'English';
+                track.srclang = 'en';
                 track.src = subtitleUrl;
-                track.default = true;     // Make this track default
+                track.default = true;
                
-                // Add the track to the video element
                 videoElement.appendChild(track);
-               
                 console.log('Subtitles loaded successfully');
             } else {
                 console.log('No subtitle file found for this video');
@@ -164,85 +157,68 @@ class MediaPlayer {
         const token = localStorage.getItem('token');
         const playerContainer = document.querySelector('.modal-content');
        
-        // Remove all existing media elements
         const oldContainers = document.querySelectorAll('.video-container, .image-container, .audio-container');
         oldContainers.forEach(container => container.remove());
        
-        // Create appropriate container based on media type
         if (mediaFile.type === 'video') {
-            // Create container for our video player
             const videoContainer = document.createElement('div');
             videoContainer.className = 'video-container';
             playerContainer.appendChild(videoContainer);
            
-            // Create video element
             const video = document.createElement('video');
             video.id = 'video-player';
             video.controls = true;
             video.crossOrigin = 'anonymous';
            
-            // Add the video to the container
             videoContainer.appendChild(video);
             this.player = video;
            
-            // Set source and play
             video.src = `/stream/${encodeURIComponent(mediaFile.name)}?token=${token}`;
             this.loadSubtitles(mediaFile);
             video.play().catch(err => console.error('Direct play error:', err));
            
         } else if (mediaFile.type === 'image') {
-            // Create container for our image viewer
             const imageContainer = document.createElement('div');
             imageContainer.className = 'image-container';
             playerContainer.appendChild(imageContainer);
            
-            // Create image element
             const img = document.createElement('img');
             img.id = 'image-viewer';
             img.src = `/images/${encodeURIComponent(mediaFile.name)}?token=${token}`;
             img.alt = mediaFile.name;
            
-            // Add the image to the container
             imageContainer.appendChild(img);
            
         } else if (mediaFile.type === 'audio') {
-            // Create container for our audio player
             const audioContainer = document.createElement('div');
             audioContainer.className = 'audio-container';
             playerContainer.appendChild(audioContainer);
            
-            // Create audio element
             const audio = document.createElement('audio');
             audio.id = 'audio-player';
             audio.controls = true;
            
-            // Add the audio to the container
             audioContainer.appendChild(audio);
             this.player = audio;
            
-            // Create album art placeholder
             const albumArt = document.createElement('div');
             albumArt.className = 'album-art';
             albumArt.innerHTML = `<span class="music-icon">🎵</span>`;
             audioContainer.appendChild(albumArt);
            
-            // Set source and play
             audio.src = `/stream/${encodeURIComponent(mediaFile.name)}?token=${token}`;
             audio.play().catch(err => console.error('Direct play error:', err));
         }
        
-        // Show the modal
         this.modal.classList.remove('hidden');
     }
 
-    // Update close method to handle all media types
     close() {
         if (this.player) {
             if (this.player.pause) {
                 this.player.pause();
             }
            
-            // Clean up HLS instance if it exists
             if (this.hls) {
                 this.hls.destroy();
                 this.hls = null;
@@ -261,7 +237,6 @@ class MediaPlayer {
             });
            
             if (response.status === 401 || response.status === 403) {
-                // Token invalid or expired
                 localStorage.removeItem('token');
                 window.location.href = '/login.html';
                 return;
@@ -279,17 +254,15 @@ class MediaPlayer {
 
     renderCategorizedMedia() {
         this.mediaContainer.innerHTML = '';
+        this.currentView = 'categories';
        
-        // Create sections for each category
         Object.entries(this.categories).forEach(([categoryKey, category]) => {
-            if (category.files.length === 0) return; // Skip empty categories
+            if (category.files.length === 0) return;
            
-            // Create category section
             const categorySection = document.createElement('div');
             categorySection.className = 'category-section';
             categorySection.setAttribute('data-category', categoryKey);
            
-            // Create category header
             const categoryHeader = document.createElement('h2');
             categoryHeader.classList.add('category-title', 'clickable-category');
             categoryHeader.addEventListener('click', () => {
@@ -298,46 +271,228 @@ class MediaPlayer {
             categoryHeader.textContent = category.name;
             categorySection.appendChild(categoryHeader);
            
-            // Create horizontal scrolling container
             const mediaRow = document.createElement('div');
             mediaRow.className = 'media-row';
            
-            // Add media items to the row
-            category.files.forEach(file => {
-                const mediaItem = this.createMediaItem(file);
-                mediaRow.appendChild(mediaItem);
-            });
+            if (categoryKey === 'tv_shows') {
+                // Group TV shows by series name
+                const tvShows = this.groupTvShowsBySeries(category.files);
+                Object.values(tvShows).forEach(series => {
+                    const seriesItem = this.createTvSeriesItem(series);
+                    mediaRow.appendChild(seriesItem);
+                });
+            } else {
+                // Regular media items for other categories
+                category.files.forEach(file => {
+                    const mediaItem = this.createMediaItem(file);
+                    mediaRow.appendChild(mediaItem);
+                });
+            }
            
             categorySection.appendChild(mediaRow);
             this.mediaContainer.appendChild(categorySection);
         });
     }
 
+    groupTvShowsBySeries(tvFiles) {
+        const series = {};
+        
+        tvFiles.forEach(file => {
+            // Extract series name from filename or folder structure
+            // Assuming format like "Series Name S01E01 - Episode Title.mkv"
+            const fileName = file.name;
+            let seriesName;
+            
+            // Try to extract series name from common patterns
+            const patterns = [
+                /^(.+?)\s+S\d+E\d+/i,  // "Series Name S01E01"
+                /^(.+?)\s+Season\s+\d+/i,  // "Series Name Season 1"
+                /^(.+?)\s+\d+x\d+/i,      // "Series Name 1x01"
+                /^(.+?)\s+-\s+\d+/i,      // "Series Name - 01"
+            ];
+            
+            for (const pattern of patterns) {
+                const match = fileName.match(pattern);
+                if (match) {
+                    seriesName = match[1].trim();
+                    break;
+                }
+            }
+            
+            // Fallback: use first part before common separators
+            if (!seriesName) {
+                seriesName = fileName.split(/[\s\-\.]+/)[0];
+            }
+            
+            if (!series[seriesName]) {
+                series[seriesName] = {
+                    name: seriesName,
+                    episodes: [],
+                    thumbnail: file.thumbnail || null
+                };
+            }
+            
+            series[seriesName].episodes.push(file);
+        });
+        
+        // Sort episodes within each series
+        Object.values(series).forEach(s => {
+            s.episodes.sort((a, b) => a.name.localeCompare(b.name));
+        });
+        
+        return series;
+    }
+
+    createTvSeriesItem(series) {
+        const seriesItem = document.createElement('div');
+        seriesItem.className = 'media-item tv-series';
+        seriesItem.setAttribute('data-series-name', series.name.toLowerCase());
+
+        let thumbnailHTML = `
+            <div class="media-thumbnail">
+                <span class="media-type">TV</span>
+                <div class="episode-count">${series.episodes.length} episodes</div>
+            </div>
+        `;
+
+        if (series.thumbnail) {
+            thumbnailHTML = `
+                <div class="media-thumbnail" style="background-image: url('${series.thumbnail}'); background-size: cover; background-position: center;">
+                    <span class="media-type">TV</span>
+                    <div class="episode-count">${series.episodes.length} episodes</div>
+                </div>
+            `;
+        } else if (series.episodes[0] && series.episodes[0].thumbnail) {
+            thumbnailHTML = `
+                <div class="media-thumbnail" style="background-image: url('${series.episodes[0].thumbnail}'); background-size: cover; background-position: center;">
+                    <span class="media-type">TV</span>
+                    <div class="episode-count">${series.episodes.length} episodes</div>
+                </div>
+            `;
+        }
+
+        seriesItem.innerHTML = `
+            ${thumbnailHTML}
+            <div class="media-info">
+                <h3>${series.name}</h3>
+                <p>${series.episodes.length} episodes</p>
+            </div>
+        `;
+
+        seriesItem.addEventListener('click', () => {
+            this.showTvSeriesEpisodes(series);
+        });
+
+        return seriesItem;
+    }
+
+    showTvSeriesEpisodes(series) {
+        this.currentView = 'tv-show-episodes';
+        this.currentTvShow = series;
+        this.mediaContainer.innerHTML = '';
+        
+        // Create back button and header
+        const headerSection = document.createElement('div');
+        headerSection.className = 'tv-series-header';
+        
+        const backButton = document.createElement('button');
+        backButton.className = 'back-to-categories-btn';
+        backButton.innerHTML = '← Back to Library';
+        backButton.addEventListener('click', () => {
+            this.renderCategorizedMedia();
+        });
+        
+        const seriesTitle = document.createElement('h1');
+        seriesTitle.className = 'series-title';
+        seriesTitle.textContent = series.name;
+        
+        headerSection.appendChild(backButton);
+        headerSection.appendChild(seriesTitle);
+        this.mediaContainer.appendChild(headerSection);
+        
+        // Create episodes grid
+        const episodesGrid = document.createElement('div');
+        episodesGrid.className = 'episodes-grid';
+        
+        series.episodes.forEach((episode, index) => {
+            const episodeItem = this.createEpisodeItem(episode, index + 1);
+            episodesGrid.appendChild(episodeItem);
+        });
+        
+        this.mediaContainer.appendChild(episodesGrid);
+    }
+
+    createEpisodeItem(episode, episodeNumber) {
+        const episodeItem = document.createElement('div');
+        episodeItem.className = 'episode-item';
+        episodeItem.setAttribute('data-filename', episode.name.toLowerCase());
+
+        let thumbnailHTML = `
+            <div class="episode-thumbnail">
+                <div class="play-button">▶</div>
+                <span class="episode-number">${episodeNumber}</span>
+            </div>
+        `;
+
+        if (episode.thumbnail) {
+            thumbnailHTML = `
+                <div class="episode-thumbnail" style="background-image: url('${episode.thumbnail}'); background-size: cover; background-position: center;">
+                    <div class="play-button">▶</div>
+                    <span class="episode-number">${episodeNumber}</span>
+                </div>
+            `;
+        }
+
+        // Extract episode title from filename
+        let episodeTitle = episode.name;
+        const titleMatch = episode.name.match(/S\d+E\d+\s*-?\s*(.+)\./i);
+        if (titleMatch) {
+            episodeTitle = titleMatch[1].trim();
+        }
+
+        episodeItem.innerHTML = `
+            ${thumbnailHTML}
+            <div class="episode-info">
+                <h3>${episodeTitle}</h3>
+                <p>Episode ${episodeNumber} • ${this.formatFileSize(episode.size)}</p>
+            </div>
+        `;
+
+        episodeItem.addEventListener('click', () => {
+            this.play(episode);
+        });
+
+        return episodeItem;
+    }
+
     renderCategoryAsGrid(categoryKey) {
-        // Clear the container
         this.mediaContainer.innerHTML = '';
 
         const category = this.categories[categoryKey];
         if (!category) return;
 
-        // Category header
         const categoryHeader = document.createElement('h2');
         categoryHeader.className = 'category-title';
         categoryHeader.textContent = category.name;
         this.mediaContainer.appendChild(categoryHeader);
 
-        // Vertical grid container
         const grid = document.createElement('div');
         grid.className = 'media-grid';
 
-        category.files.forEach(file => {
-            const mediaItem = this.createMediaItem(file);
-            grid.appendChild(mediaItem);
-        });
+        if (categoryKey === 'tv_shows') {
+            const tvShows = this.groupTvShowsBySeries(category.files);
+            Object.values(tvShows).forEach(series => {
+                const seriesItem = this.createTvSeriesItem(series);
+                grid.appendChild(seriesItem);
+            });
+        } else {
+            category.files.forEach(file => {
+                const mediaItem = this.createMediaItem(file);
+                grid.appendChild(mediaItem);
+            });
+        }
 
         this.mediaContainer.appendChild(grid);
-
-        // Show All button
         this.showAllButton(categoryKey);
     }
 
@@ -346,7 +501,6 @@ class MediaPlayer {
     }
 
     showAllButton(currentCategoryKey) {
-        // Remove existing button if present
         let btn = document.getElementById('show-all-btn');
         if (btn) btn.remove();
 
@@ -357,12 +511,9 @@ class MediaPlayer {
         btn.style.margin = '20px';
 
         btn.onclick = () => {
-            // Show all categories
-            const categories = this.mediaContainer.querySelectorAll('.category-section');
             this.renderCategorizedMedia();
         };
 
-        // Insert at the top of the content area
         this.mediaContainer.prepend(btn);
     }
 
@@ -371,7 +522,6 @@ class MediaPlayer {
         mediaItem.className = `media-item ${file.type}`;
         mediaItem.setAttribute('data-filename', file.name.toLowerCase());
 
-        // Creating thumbnails
         let thumbnailHTML = `
             <div class="media-thumbnail">
                 <span class="media-type">${file.type}</span>
@@ -417,30 +567,44 @@ class MediaPlayer {
     }
 
     filterMedia(searchTerm) {
-        const categories = this.mediaContainer.querySelectorAll('.category-section');
         searchTerm = searchTerm.toLowerCase();
 
-        categories.forEach(categorySection => {
-            const items = categorySection.querySelectorAll('.media-item');
-            let visibleItems = 0;
-
-            items.forEach(item => {
-                const filename = item.getAttribute('data-filename');
+        if (this.currentView === 'tv-show-episodes') {
+            // Filter episodes in current TV show view
+            const episodes = this.mediaContainer.querySelectorAll('.episode-item');
+            episodes.forEach(episode => {
+                const filename = episode.getAttribute('data-filename');
                 if(filename.includes(searchTerm)) {
-                    item.style.display = 'block';
-                    visibleItems++;
+                    episode.style.display = 'block';
                 } else {
-                    item.style.display = 'none';
+                    episode.style.display = 'none';
                 }
             });
+        } else {
+            // Filter categories view
+            const categories = this.mediaContainer.querySelectorAll('.category-section');
+            categories.forEach(categorySection => {
+                const items = categorySection.querySelectorAll('.media-item');
+                let visibleItems = 0;
 
-            // Hide category section if no items are visible
-            if (visibleItems === 0) {
-                categorySection.style.display = 'none';
-            } else {
-                categorySection.style.display = 'block';
-            }
-        });
+                items.forEach(item => {
+                    const filename = item.getAttribute('data-filename') || 
+                                   item.getAttribute('data-series-name') || '';
+                    if(filename.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        visibleItems++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                if (visibleItems === 0) {
+                    categorySection.style.display = 'none';
+                } else {
+                    categorySection.style.display = 'block';
+                }
+            });
+        }
     }
 
     addKeyboardShortcutsInfo() {

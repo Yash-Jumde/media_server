@@ -213,6 +213,80 @@ app.get('/stream/:filename', authenticateToken, async (req, res) => {
   }
 });
 
+// TV Shows specific endpoint for getting series details
+app.get('/api/tv-shows/:seriesName', authenticateToken, async (req, res) => {
+  try {
+    const seriesName = decodeURIComponent(req.params.seriesName);
+    const { getTvSeriesDetails } = require('./server/utils/fileScanner');
+    const { generateThumbnail } = require('./server/utils/thumbnailGenerator');
+    
+    const seriesDetails = await getTvSeriesDetails(MEDIA_DIR, seriesName);
+    
+    if (!seriesDetails) {
+      return res.status(404).json({ error: 'TV series not found' });
+    }
+    
+    // Generate thumbnails for episodes
+    for (const episode of seriesDetails.episodes) {
+      if (episode.type === 'video') {
+        try {
+          const thumbnailPath = await generateThumbnail(episode.path, episode.name);
+          episode.thumbnail = `/thumbnails/${path.basename(thumbnailPath)}`;
+        } catch (err) {
+          console.error(`Failed to generate thumbnail for ${episode.name}:`, err);
+          episode.thumbnail = null;
+        }
+      }
+    }
+    
+    res.json(seriesDetails);
+  } catch (error) {
+    console.error('Error retrieving TV series details:', error);
+    res.status(500).json({ error: 'Failed to retrieve TV series details' });
+  }
+});
+
+// Get all TV series (summary view)
+app.get('/api/tv-shows', authenticateToken, async (req, res) => {
+  try {
+    const { scanTvShowsDirectory } = require('./server/utils/fileScanner');
+    const { generateThumbnail } = require('./server/utils/thumbnailGenerator');
+    
+    const tvShowsPath = path.join(MEDIA_DIR, 'tv_shows');
+    const series = await scanTvShowsDirectory(tvShowsPath);
+    
+    // Convert to array and add thumbnail for first episode of each series
+    const seriesArray = await Promise.all(
+      Object.values(series).map(async (s) => {
+        let thumbnail = null;
+        
+        // Try to get thumbnail from first episode
+        if (s.episodes.length > 0) {
+          const firstEpisode = s.episodes[0];
+          try {
+            const thumbnailPath = await generateThumbnail(firstEpisode.path, firstEpisode.name);
+            thumbnail = `/thumbnails/${path.basename(thumbnailPath)}`;
+          } catch (err) {
+            console.error(`Failed to generate thumbnail for ${firstEpisode.name}:`, err);
+          }
+        }
+        
+        return {
+          name: s.name,
+          episodeCount: s.episodes.length,
+          thumbnail: thumbnail,
+          type: 'tv_series'
+        };
+      })
+    );
+    
+    res.json(seriesArray);
+  } catch (error) {
+    console.error('Error retrieving TV shows:', error);
+    res.status(500).json({ error: 'Failed to retrieve TV shows' });
+  }
+});
+
 
 // Start server
 app.listen(PORT, () => {
