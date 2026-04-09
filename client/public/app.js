@@ -36,6 +36,31 @@ class MediaPlayer {
             this.close();
         });
 
+        document.getElementById('refresh-library-btn').addEventListener('click', async () => {
+            const btn = document.getElementById('refresh-library-btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'Scanning...';
+            btn.disabled = true;
+            try {
+                const token = localStorage.getItem('token');
+                const response = await fetch('/api/scan', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if(response.ok) {
+                    await this.loadMedia();
+                } else {
+                    console.error('Scan failed');
+                    alert('Failed to refresh library.');
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Error refreshing library.');
+            } finally {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }
+        });
+
         // Enhanced keyboard controls for the player
         document.addEventListener('keydown', (e) => {
             // Only process shortcuts when video player is visible

@@ -2,6 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const { exec } = require('child_process');
 const fsSync = require('fs');
+const db = require('../db');
 
 const supportedFormats = {
     video: ['.mp4', '.mkv', '.avi', '.mov', '.wmv', '.flv', '.webm'],
@@ -351,6 +352,96 @@ const preprocessMedia = async (files) => {
     console.log("Background preprocessing initiated. This will continue in the background.");
 };
 
+// New function to synchronize scanned files with the SQLite database
+const syncMediaWithDatabase = async (mediaDir) => {
+    console.log('Synchronizing media with database...');
+    
+    // First, scan everything using the existing logic
+    const scannedCategories = await scanDirectoryWithCategories(mediaDir);
+    
+    // Get category mappings from DB
+    const dbCategoriesArray = await db.all('SELECT * FROM categories');
+    const dbCategories = {};
+    dbCategoriesArray.forEach(cat => {
+        dbCategories[cat.key_name] = cat.id;
+    });
+
+    let newFilesCount = 0;
+
+    // Process each category
+    for (const [catKey, catData] of Object.entries(scannedCategories)) {
+        const categoryId = dbCategories[catKey];
+        if (!categoryId) continue;
+
+        if (catKey === 'tv_shows' && catData.series) {
+            // Process TV Shows
+            for (const [seriesName, seriesData] of Object.entries(catData.series)) {
+                // Upsert Series
+                let seriesRecord = await db.get('SELECT id FROM series WHERE name = ?', [seriesName]);
+                if (!seriesRecord) {
+                    const result = await db.run('INSERT INTO series (name) VALUES (?)', [seriesName]);
+                    seriesRecord = { id: result.id };
+                }
+                const seriesId = seriesRecord.id;
+
+                // Process Episodes
+                for (const episode of seriesData.episodes) {
+                    const existing = await db.get('SELECT id FROM media_files WHERE filepath = ?', [episode.path]);
+                    if (!existing) {
+                        // Extract season/episode numbers if possible
+                        let sNum = null, eNum = null;
+                        const match = episode.name.match(/S(\d+)E(\d+)/i) || episode.name.match(/(\d+)x(\d+)/i);
+                        if (match) {
+                            sNum = parseInt(match[1]);
+                            eNum = parseInt(match[2]);
+                        }
+                        
+                        await db.run(
+                            `INSERT INTO media_files 
+                            (category_id, series_id, filename, filepath, media_type, file_size, episode_num, season_num) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+                            [categoryId, seriesId, episode.name, episode.path, episode.type, episode.size, eNum, sNum]
+                        );
+                        newFilesCount++;
+                    }
+                }
+            }
+        } else {
+            // Process other categories (movies, audio, images)
+            for (const file of catData.files) {
+                const existing = await db.get('SELECT id FROM media_files WHERE filepath = ?', [file.path]);
+                if (!existing) {
+                    await db.run(
+                        `INSERT INTO media_files 
+                        (category_id, filename, filepath, media_type, file_size) 
+                        VALUES (?, ?, ?, ?, ?)`,
+                        [categoryId, file.name, file.path, file.type, file.size]
+                    );
+                    newFilesCount++;
+                }
+            }
+        }
+    }
+    
+    // --- START CLEANUP PHASE ---
+    console.log('Cleaning up stale database records...');
+    const allDbFiles = await db.all('SELECT id, filepath FROM media_files');
+    let removedCount = 0;
+    
+    for (const dbFile of allDbFiles) {
+        if (!fsSync.existsSync(dbFile.filepath)) {
+            await db.run('DELETE FROM media_files WHERE id = ?', [dbFile.id]);
+            // Also clean up watch history for this file
+            await db.run('DELETE FROM watch_history WHERE media_id = ?', [dbFile.id]);
+            removedCount++;
+        }
+    }
+    // --- END CLEANUP PHASE ---
+    
+    console.log(`Database sync complete. Added ${newFilesCount} new files, removed ${removedCount} stale entries.`);
+    return scannedCategories;
+};
+
 module.exports = { 
     scanDirectory, 
     scanDirectoryWithCategories, 
@@ -358,5 +449,6 @@ module.exports = {
     getTvSeriesDetails,
     extractSeriesNameFromFile,
     supportedFormats, 
-    preprocessMedia 
+    preprocessMedia,
+    syncMediaWithDatabase
 };
