@@ -1,13 +1,15 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { login } from '@/lib/api';
-import { Film, Lock, ArrowRight } from 'lucide-react';
+import { Film, Lock, User, ArrowRight } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function LoginPage() {
   const router = useRouter();
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -17,10 +19,10 @@ export default function LoginPage() {
     setError('');
     setLoading(true);
     try {
-      await login(password);
+      await login(username, password);
       router.push('/');
     } catch (err) {
-      setError('Invalid password. Please try again.');
+      setError(err.message || 'Invalid username or password. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -40,22 +42,37 @@ export default function LoginPage() {
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.inputWrap}>
-            <Lock size={18} className={styles.inputIcon} />
+            <User size={18} className={styles.inputIcon} />
             <input
-              type="password"
-              placeholder="Enter password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               className={styles.input}
               autoFocus
             />
           </div>
-          {error && <p className={styles.error}>{error}</p>}
+          <div className={styles.inputWrap}>
+            <Lock size={18} className={styles.inputIcon} />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={styles.input}
+            />
+          </div>
+          {error && <p className={`${styles.error} ${error === 'Pending Approval' ? styles.pending : ''}`}>{error}</p>}
           <button type="submit" className={styles.button} disabled={loading}>
             {loading ? 'Signing in...' : 'Sign In'}
             {!loading && <ArrowRight size={18} />}
           </button>
         </form>
+
+        <div className={styles.footerLinks}>
+          <p>Don't have an account?</p>
+          <Link href="/register" className={styles.link}>Register here</Link>
+        </div>
       </div>
     </div>
   );

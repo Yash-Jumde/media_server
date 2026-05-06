@@ -2,13 +2,29 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
+import { useSearch } from '@/lib/SearchContext';
 import Sidebar from './Sidebar';
 import styles from './Shell.module.css';
+
+const titleMap = {
+  '/': 'Library',
+  '/movies': 'Movies',
+  '/tv-shows': 'TV Shows',
+  '/audio': 'Audio',
+  '/images': 'Images',
+  '/favorites': 'Favorites',
+  '/admin': 'User Management',
+  '/profile': 'Account Settings',
+};
 
 export default function Shell({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const pathname = usePathname();
+  const { searchQuery, setSearchQuery } = useSearch();
+
+  // Get current page title
+  const pageTitle = titleMap[pathname] || 'Library';
 
   // Close sidebar when navigating on mobile
   useEffect(() => {
@@ -34,7 +50,22 @@ export default function Shell({ children }) {
 
       {/* Main Content */}
       <div className={styles.contentWrapper}>
-        {children}
+        <div className={styles.topBar}>
+          <h1 className={styles.pageTitle}>{pageTitle}</h1>
+          <div className={styles.searchWrap}>
+            <Search size={18} className={styles.searchIcon} />
+            <input
+              type="text"
+              placeholder="Search library..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={styles.searchInput}
+            />
+          </div>
+        </div>
+        <div className={styles.scrollContent}>
+          {children}
+        </div>
       </div>
     </div>
   );

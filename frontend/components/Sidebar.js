@@ -4,10 +4,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   LayoutGrid, Film, Tv, Music, Image as ImageIcon, Heart,
-  RefreshCw, LogOut, X
+  RefreshCw, LogOut, X, Users, Settings, User as UserIcon
 } from 'lucide-react';
-import { clearToken, scanLibrary } from '@/lib/api';
-import { useState } from 'react';
+import { clearToken, scanLibrary, getCurrentUser } from '@/lib/api';
+import { useState, useEffect } from 'react';
+import TranscodeQueue from './TranscodeQueue';
 import styles from './Sidebar.module.css';
 
 const navItems = [
@@ -22,6 +23,11 @@ const navItems = [
 export default function Sidebar({ isOpen, onClose }) {
   const pathname = usePathname();
   const [scanning, setScanning] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    setUser(getCurrentUser());
+  }, []);
 
   const handleScan = async () => {
     setScanning(true);
@@ -37,6 +43,7 @@ export default function Sidebar({ isOpen, onClose }) {
 
   const handleLogout = () => {
     clearToken();
+    localStorage.removeItem('user');
     window.location.href = '/login';
   };
 
@@ -83,9 +90,54 @@ export default function Sidebar({ isOpen, onClose }) {
               <span>{scanning ? 'Scanning...' : 'Refresh Library'}</span>
             </button>
           </div>
+
+          <div className={styles.queueWrapper}>
+            <TranscodeQueue compact={true} />
+          </div>
+
+          {user && user.role === 'admin' && (
+            <div className={styles.navSection}>
+              <span className={styles.navLabel}>Admin</span>
+              <Link
+                href="/admin"
+                className={`${styles.navItem} ${pathname === '/admin' ? styles.active : ''}`}
+              >
+                <Users size={20} />
+                <span>User Management</span>
+              </Link>
+            </div>
+          )}
+
+          <div className={styles.navSection}>
+            <span className={styles.navLabel}>Account</span>
+            <Link
+              href="/profile"
+              className={`${styles.navItem} ${pathname === '/profile' ? styles.active : ''}`}
+            >
+              <Settings size={20} />
+              <span>Settings</span>
+            </Link>
+          </div>
         </nav>
 
         <div className={styles.footer}>
+          {user && (
+            <div className={styles.userInfo}>
+              <div className={styles.avatar}>
+                {user.avatar_url ? (
+                  <img src={user.avatar_url} alt={user.username} className={styles.avatarImage} />
+                ) : (
+                  <div className={styles.defaultAvatar}>
+                    {user.username.substring(0, 2).toUpperCase()}
+                  </div>
+                )}
+              </div>
+              <div className={styles.userDetails}>
+                <span className={styles.username}>{user.username}</span>
+                <span className={styles.userRole}>{user.role}</span>
+              </div>
+            </div>
+          )}
           <button className={styles.navItem} onClick={handleLogout}>
             <LogOut size={20} />
             <span>Sign Out</span>

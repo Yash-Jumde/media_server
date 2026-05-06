@@ -23,6 +23,10 @@
   background: var(--bg-secondary);
 }
 
+.squareCard .poster {
+  aspect-ratio: 1/1;
+}
+
 .posterImage {
   width: 100%;
   height: 100%;
@@ -44,41 +48,9 @@
   color: var(--text-muted);
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.8) 0%,
-    transparent 50%
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s var(--ease-smooth);
-}
-
-.card:hover .overlay {
-  opacity: 1;
-}
-
-.playBtn {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent);
-  border-radius: 50%;
-  color: white;
-  box-shadow: 0 4px 20px var(--accent-glow);
-  transform: scale(0.8);
-  transition: transform 0.3s var(--ease-spring);
-}
-
-.card:hover .playBtn {
-  transform: scale(1);
+.audioFallback {
+  background: linear-gradient(135deg, #6366f1, #a855f7) !important;
+  color: #fff !important;
 }
 
 .badge {
@@ -113,6 +85,30 @@
 
 .info {
   padding: 12px;
+}
+
+.squareCard {
+  position: relative;
+}
+
+.squareCard .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 10px 8px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 5;
+}
+
+.squareCard .title {
+  font-size: 0.75rem;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.squareCard .meta {
+  display: none;
 }
 
 .title {

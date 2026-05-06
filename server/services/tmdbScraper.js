@@ -192,6 +192,20 @@ class TMDBScraper {
         return null;
     }
 
+    async getEpisodeDetails(tvTmdbId, seasonNum, episodeNum) {
+        if (!this.enabled || !tvTmdbId || seasonNum == null || episodeNum == null) return null;
+
+        try {
+            const data = await this.fetchJSON(
+                `/3/tv/${tvTmdbId}/season/${seasonNum}/episode/${episodeNum}?api_key=${this.apiKey}`
+            );
+            return data;
+        } catch (error) {
+            console.error(`[TMDB] Details failed for Episode S${seasonNum}E${episodeNum} (TV ${tvTmdbId}):`, error.message);
+        }
+        return null;
+    }
+
     formatCast(credits) {
         if (!credits || !credits.cast) return null;
         return credits.cast
@@ -294,6 +308,43 @@ class TMDBScraper {
         console.log(`[TMDB] Scraped TV: "${details.name}" (${details.first_air_date})`);
     }
 
+    async scrapeEpisodeMetadata(seriesRow, episodeRow) {
+        if (!this.enabled) return;
+        if (episodeRow.tmdb_id) return; // Already scraped
+
+        if (!seriesRow.tmdb_id || episodeRow.season_num == null || episodeRow.episode_num == null) return;
+
+        console.log(`[TMDB] Searching Episode: "${seriesRow.name}" S${episodeRow.season_num}E${episodeRow.episode_num}`);
+
+        const details = await this.getEpisodeDetails(seriesRow.tmdb_id, episodeRow.season_num, episodeRow.episode_num);
+        if (!details) {
+            // Mark as failed by putting a dummy tmdb_id to avoid rescraping infinitely? 
+            // Better to leave null or handle another way, but we will leave null for now.
+            return;
+        }
+
+        await db.run(
+            `UPDATE media_files SET 
+                tmdb_id = ?, tmdb_poster_url = ?, tmdb_backdrop_url = ?,
+                tmdb_rating = ?, tmdb_release_date = ?, tmdb_overview = ?,
+                tmdb_runtime = ?, title = ?, updated_at = CURRENT_TIMESTAMP
+            WHERE id = ?`,
+            [
+                details.id,
+                this.posterUrl(details.still_path) || seriesRow.tmdb_poster_url, // Use still_path for episodes
+                this.backdropUrl(details.still_path) || seriesRow.tmdb_backdrop_url,
+                details.vote_average,
+                details.air_date,
+                details.overview,
+                details.runtime,
+                details.name,
+                episodeRow.id
+            ]
+        );
+
+        console.log(`[TMDB] Scraped Episode: "${details.name}" (S${episodeRow.season_num}E${episodeRow.episode_num})`);
+    }
+
     async scrapeAll() {
         if (!this.enabled) {
             console.log('[TMDB] Scraping skipped - no API key configured.');
@@ -322,6 +373,29 @@ class TMDBScraper {
         for (const s of allSeries) {
             await this.scrapeSeriesMetadata(s);
             await new Promise(r => setTimeout(r, 300));
+        }
+
+        // Scrape TV Episodes
+        const unscrapedEpisodes = await db.all(
+            `SELECT mf.* FROM media_files mf 
+             JOIN categories c ON mf.category_id = c.id 
+             WHERE c.key_name = 'tv_shows' 
+             AND mf.media_type = 'video'
+             AND mf.tmdb_id IS NULL
+             AND mf.series_id IS NOT NULL`
+        );
+
+        // Fetch series to have tmdb_id for episodes
+        const allSeriesWithTmdb = await db.all('SELECT * FROM series WHERE tmdb_id IS NOT NULL');
+        const seriesMap = {};
+        allSeriesWithTmdb.forEach(s => seriesMap[s.id] = s);
+
+        for (const ep of unscrapedEpisodes) {
+            const seriesRow = seriesMap[ep.series_id];
+            if (seriesRow) {
+                await this.scrapeEpisodeMetadata(seriesRow, ep);
+                await new Promise(r => setTimeout(r, 300));
+            }
         }
 
         console.log('[TMDB] Metadata scrape complete.');

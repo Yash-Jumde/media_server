@@ -42,37 +42,4 @@ const transcodeVideo = (inputPath, outputPath, format = 'mp4') => {
 };
 
 
-const createHLSStream = async (inputPath, outputDir) => {
-    return new Promise((resolve, reject) => {
-        const ffmpeg = require('fluent-ffmpeg');
-        const basename = path.basename(inputPath, path.extname(inputPath));
-        const outputPath = path.join(outputDir, basename);
-        
-        // Create output directory
-        if (!fs.existsSync(outputPath)) {
-            fs.mkdirSync(outputPath, { recursive: true });
-        }
-        
-        ffmpeg(inputPath)
-            .outputOptions([
-                '-profile:v baseline',
-                '-level 3.0',
-                '-start_number 0',
-                '-hls_time 10',      // 10-second segments
-                '-hls_list_size 0',  // Keep all segments
-                '-f hls'             // HLS format
-            ])
-            .output(path.join(outputPath, 'playlist.m3u8'))
-            .on('end', () => {
-                console.log(`HLS conversion complete for ${basename}`);
-                resolve(outputPath);
-            })
-            .on('error', (err) => {
-                console.error(`Error creating HLS stream: ${err.message}`);
-                reject(err);
-            })
-            .run();
-    });
-};
-
-module.exports = {generateThumbnail, transcodeVideo, createHLSStream};
+module.exports = {generateThumbnail, transcodeVideo};

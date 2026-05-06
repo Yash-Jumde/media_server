@@ -35,42 +35,6 @@
   margin-top: 2px;
 }
 
-.searchWrap {
-  position: relative;
-  width: 320px;
-}
-
-.searchIcon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  pointer-events: none;
-}
-
-.searchInput {
-  width: 100%;
-  padding: 10px 14px 10px 40px;
-  background: var(--bg-glass);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-sm);
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  font-family: inherit;
-  outline: none;
-  transition: all 0.2s var(--ease-smooth);
-}
-
-.searchInput::placeholder {
-  color: var(--text-muted);
-}
-
-.searchInput:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
-}
-
 .content {
   flex: 1;
   overflow-y: auto;
@@ -85,12 +49,17 @@
 .sectionTitle {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.15rem;
-  font-weight: 600;
+  gap: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   letter-spacing: -0.01em;
+}
+
+.sectionIcon {
+  color: white;
+  opacity: 0.9;
 }
 
 .row {
@@ -122,6 +91,41 @@
 .skeletonCard {
   aspect-ratio: 2/3;
   border-radius: var(--radius-md);
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+  grid-column: 1 / -1;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: var(--accent-primary);
+}
+
+.sectionHeader {
+  margin-bottom: 32px;
+}
+
+.pageTitle {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.titleIcon {
+  color: var(--accent-primary);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .empty {

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getToken, fetchFavorites } from '@/lib/api';
+import { useSearch } from '@/lib/SearchContext';
 import Shell from '@/components/Shell';
 import MediaCard from '@/components/MediaCard';
 import Player from '@/components/Player';
@@ -30,6 +31,18 @@ export default function FavoritesPage() {
     }
   };
 
+  const { searchQuery } = useSearch();
+
+  const filteredItems = files.filter((f) => {
+    if (!searchQuery) return true;
+    const query = searchQuery.toLowerCase().trim();
+    return (
+      (f.title || '').toLowerCase().includes(query) ||
+      (f.name || '').toLowerCase().includes(query) ||
+      (f.filename || '').toLowerCase().includes(query)
+    );
+  });
+
   const handleClosePlayer = () => {
     setActiveFile(null);
     loadFavorites(); // Refresh in case favorite was toggled
@@ -37,12 +50,6 @@ export default function FavoritesPage() {
 
   return (
     <Shell>
-      <header className={styles.header}>
-        <div>
-          <h1 className={styles.greeting}>Favorites</h1>
-          <p className={styles.subtitle}>{files.length} items saved</p>
-        </div>
-      </header>
       <div className={styles.content}>
         {loading ? (
           <div className={styles.skeletonGrid}>
@@ -52,10 +59,10 @@ export default function FavoritesPage() {
           </div>
         ) : (
           <div className={styles.grid}>
-            {files.map((f, i) => (
+            {filteredItems.map((f, i) => (
               <MediaCard key={i} file={{...f, is_favorite: true}} onClick={setActiveFile} />
             ))}
-            {files.length === 0 && <p className={styles.empty}>No favorites yet.</p>}
+            {filteredItems.length === 0 && <p className={styles.empty}>No matching favorites found.</p>}
           </div>
         )}
       </div>

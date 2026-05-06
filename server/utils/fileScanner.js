@@ -17,6 +17,35 @@ const categoryMapping = {
     'audio': 'Audio'
 };
 
+const nicePrefix = process.platform === 'win32' ? '' : 'nice -n 19 ';
+
+const ffprobePath = require('ffprobe-static').path;
+const ffmpegPath = require('ffmpeg-static');
+
+// Path normalization helpers for portability
+// This ensures the DB stores relative paths so history is preserved if the project is moved
+const MEDIA_DIR_ROOT = path.join(__dirname, '../../media');
+const toRelative = (absPath) => {
+    if (!absPath) return absPath;
+    if (!path.isAbsolute(absPath)) return absPath;
+    return path.relative(MEDIA_DIR_ROOT, absPath);
+};
+
+const toAbsolute = (relPath) => {
+    if (!relPath) return relPath;
+    if (path.isAbsolute(relPath)) return relPath;
+    return path.join(MEDIA_DIR_ROOT, relPath);
+};
+
+const getDuration = (filePath) => {
+    return new Promise((resolve) => {
+        exec(`"${ffprobePath}" -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "${filePath}"`, (err, stdout) => {
+            if (err) resolve(null);
+            else resolve(Math.round(parseFloat(stdout)) || null);
+        });
+    });
+};
+
 const scanDirectory = async (dirPath) => {
     const files = [];
     const items = await fs.readdir(dirPath, {withFileTypes: true});
@@ -37,11 +66,20 @@ const scanDirectory = async (dirPath) => {
             }
 
             if(type) {
+                const filePath = path.join(dirPath, item.name);
+                const stat = await fs.stat(filePath);
+                let duration = null;
+
+                if (type === 'video' || type === 'audio') {
+                    duration = await getDuration(filePath);
+                }
+
                 files.push({
                     name: item.name,
-                    path: path.join(dirPath, item.name),
+                    path: filePath,
                     type: type,
-                    size: (await fs.stat(path.join(dirPath, item.name))).size
+                    size: stat.size,
+                    duration: duration
                 });
             }
         }
@@ -257,6 +295,8 @@ const getTvSeriesDetails = async (mediaDir, seriesName) => {
     }
 };
 
+const TranscodeManager = require('../services/transcodeManager');
+
 // New function to preprocess media files for caching
 const preprocessMedia = async (files) => {
     const transcodedDir = path.join(__dirname, '../../transcoded');
@@ -290,7 +330,7 @@ const preprocessMedia = async (files) => {
             // Only extract cover art if not already done
             if (!fsSync.existsSync(coverPath)) {
                 console.log(`Extracting cover art for: ${file.name}`);
-                exec(`nice -n 19 ffmpeg -i "${file.path}" -an -vcodec copy "${coverPath}"`,
+                exec(`${nicePrefix}"${ffmpegPath}" -i "${toAbsolute(file.path)}" -an -vcodec copy "${coverPath}"`,
                     (error) => {
                         // Ignore errors as not all audio files have embedded artwork
                         if (!error) {
@@ -302,62 +342,48 @@ const preprocessMedia = async (files) => {
         }
         else if (file.type === 'video') {
             const ext = path.extname(file.path).toLowerCase();
-            const baseName = path.basename(file.path, ext);
-           
+            
             // Skip already supported formats for direct transcoding
-            if (['.mp4', '.webm'].includes(ext)) {
+            if (['.mp4', '.webm', '.mov'].includes(ext)) {
                 continue;
             }
            
-            const transcodedPath = path.join(transcodedDir, `${baseName}.mp4`);
-            const adaptivePath = path.join(adaptiveDir, baseName);
-           
-            // Create folder for adaptive streaming files
-            if (!fsSync.existsSync(adaptivePath)) {
-                await fs.mkdir(adaptivePath, { recursive: true });
-            }
-           
-            // Only transcode if not already done
-            if (!fsSync.existsSync(transcodedPath)) {
-                console.log(`Background transcoding: ${file.name}`);
-                // Use a lower-priority subprocess for MP4 version
-                exec(`nice -n 19 ffmpeg -i "${file.path}" -c:v libx264 -preset medium -crf 22 -c:a aac -b:a 128k "${transcodedPath}"`,
-                    (error) => {
-                        if (error) {
-                            console.error(`Error transcoding ${file.name}:`, error);
-                        } else {
-                            console.log(`Completed transcoding: ${file.name}`);
-                        }
-                    }
-                );
-            }
-           
-            // Check if adaptive streaming files exist
-            const hlsPlaylist = path.join(adaptivePath, 'playlist.m3u8');
-            if (!fsSync.existsSync(hlsPlaylist)) {
-                console.log(`Creating adaptive streaming files for: ${file.name}`);
-                exec(`nice -n 19 ffmpeg -i "${file.path}" -c:v libx264 -crf 22 -c:a aac -b:a 128k -f hls -hls_time 10 -hls_list_size 0 -hls_segment_filename "${adaptivePath}/segment%03d.ts" "${hlsPlaylist}"`,
-                    (error) => {
-                        if (error) {
-                            console.error(`Error creating HLS for ${file.name}:`, error);
-                        } else {
-                            console.log(`Completed HLS creation: ${file.name}`);
-                        }
-                    }
-                );
+            // Use TranscodeManager for MKV/AVI/etc
+            if (['.mkv', '.avi', '.wmv', '.flv'].includes(ext)) {
+                // We need the mediaId here, which we might not have yet during initial scan
+                // So we'll fetch it from DB after sync is done
+                continue;
             }
         }
     }
-   
-    console.log("Background preprocessing initiated. This will continue in the background.");
+};
+
+// Function to trigger background transcoding for all files that need it
+const triggerBackgroundTranscoding = async () => {
+    try {
+        const files = await db.all(`
+            SELECT mf.id, mf.filepath, mf.filename 
+            FROM media_files mf
+            JOIN categories c ON mf.category_id = c.id
+            WHERE c.key_name IN ('movies', 'tv_shows')
+            AND (filepath LIKE '%.mkv' OR filepath LIKE '%.avi' OR filepath LIKE '%.wmv' OR filepath LIKE '%.flv')
+        `);
+
+        for (const file of files) {
+            await TranscodeManager.addToQueue(file.id, toAbsolute(file.filepath));
+        }
+    } catch (error) {
+        console.error('Error triggering background transcoding:', error);
+    }
 };
 
 // New function to synchronize scanned files with the SQLite database
 const syncMediaWithDatabase = async (mediaDir) => {
-    console.log('Synchronizing media with database...');
-    
     // First, scan everything using the existing logic
     const scannedCategories = await scanDirectoryWithCategories(mediaDir);
+    
+    // Normalize path helper for database storage
+    const normalizePathForDb = (p) => toRelative(p).toLowerCase();
     
     // Get category mappings from DB
     const dbCategoriesArray = await db.all('SELECT * FROM categories');
@@ -386,21 +412,37 @@ const syncMediaWithDatabase = async (mediaDir) => {
 
                 // Process Episodes
                 for (const episode of seriesData.episodes) {
-                    const existing = await db.get('SELECT id FROM media_files WHERE filepath = ?', [episode.path]);
+                    const normPath = normalizePathForDb(episode.path);
+                    const existing = await db.get('SELECT id FROM media_files WHERE LOWER(filepath) = ?', [normPath]);
                     if (!existing) {
                         // Extract season/episode numbers if possible
                         let sNum = null, eNum = null;
-                        const match = episode.name.match(/S(\d+)E(\d+)/i) || episode.name.match(/(\d+)x(\d+)/i);
-                        if (match) {
-                            sNum = parseInt(match[1]);
-                            eNum = parseInt(match[2]);
+                        const filenameMatch = episode.name.match(/S(\d+)E(\d+)/i) || episode.name.match(/(\d+)x(\d+)/i);
+                        if (filenameMatch) {
+                            sNum = parseInt(filenameMatch[1]);
+                            eNum = parseInt(filenameMatch[2]);
+                        } else {
+                            // Check parent directory for Season number
+                            const parentDir = path.basename(path.dirname(episode.path));
+                            const seasonMatch = parentDir.match(/(?:Season|S)\s*(\d+)/i);
+                            if (seasonMatch) {
+                                sNum = parseInt(seasonMatch[1]);
+                            } else {
+                                sNum = 1; // Default to season 1 if we can't find one
+                            }
+                            
+                            // Check filename for episode number as fallback
+                            const epMatch = episode.name.match(/(?:Episode|Ep|E|\b)(\d+)\b/i);
+                            if (epMatch) {
+                                eNum = parseInt(epMatch[1]);
+                            }
                         }
                         
                         await db.run(
                             `INSERT INTO media_files 
-                            (category_id, series_id, filename, filepath, media_type, file_size, episode_num, season_num) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
-                            [categoryId, seriesId, episode.name, episode.path, episode.type, episode.size, eNum, sNum]
+                            (category_id, series_id, filename, filepath, media_type, file_size, duration, episode_num, season_num) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                            [categoryId, seriesId, episode.name, toRelative(episode.path), episode.type, episode.size, episode.duration, eNum, sNum]
                         );
                         newFilesCount++;
                     }
@@ -409,13 +451,14 @@ const syncMediaWithDatabase = async (mediaDir) => {
         } else {
             // Process other categories (movies, audio, images)
             for (const file of catData.files) {
-                const existing = await db.get('SELECT id FROM media_files WHERE filepath = ?', [file.path]);
+                const normPath = normalizePathForDb(file.path);
+                const existing = await db.get('SELECT id FROM media_files WHERE LOWER(filepath) = ?', [normPath]);
                 if (!existing) {
                     await db.run(
                         `INSERT INTO media_files 
-                        (category_id, filename, filepath, media_type, file_size) 
-                        VALUES (?, ?, ?, ?, ?)`,
-                        [categoryId, file.name, file.path, file.type, file.size]
+                        (category_id, filename, filepath, media_type, file_size, duration) 
+                        VALUES (?, ?, ?, ?, ?, ?)`,
+                        [categoryId, file.name, toRelative(file.path), file.type, file.size, file.duration]
                     );
                     newFilesCount++;
                 }
@@ -429,7 +472,8 @@ const syncMediaWithDatabase = async (mediaDir) => {
     let removedCount = 0;
     
     for (const dbFile of allDbFiles) {
-        if (!fsSync.existsSync(dbFile.filepath)) {
+        const absPath = toAbsolute(dbFile.filepath);
+        if (!fsSync.existsSync(absPath)) {
             await db.run('DELETE FROM media_files WHERE id = ?', [dbFile.id]);
             // Also clean up watch history for this file
             await db.run('DELETE FROM watch_history WHERE media_id = ?', [dbFile.id]);
@@ -439,6 +483,10 @@ const syncMediaWithDatabase = async (mediaDir) => {
     // --- END CLEANUP PHASE ---
     
     console.log(`Database sync complete. Added ${newFilesCount} new files, removed ${removedCount} stale entries.`);
+    
+    // Trigger background transcoding after sync
+    triggerBackgroundTranscoding();
+
     return scannedCategories;
 };
 
@@ -450,5 +498,6 @@ module.exports = {
     extractSeriesNameFromFile,
     supportedFormats, 
     preprocessMedia,
+    triggerBackgroundTranscoding,
     syncMediaWithDatabase
 };

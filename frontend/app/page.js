@@ -3,21 +3,27 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getToken, fetchMedia, fetchRecent } from '@/lib/api';
+import { useSearch } from '@/lib/SearchContext';
 import Shell from '@/components/Shell';
 import MediaCard from '@/components/MediaCard';
+import MediaDetail from '@/components/MediaDetail';
 import Player from '@/components/Player';
-import { Clock, TrendingUp, Search } from 'lucide-react';
+import TranscodeQueue from '@/components/TranscodeQueue';
+import { Clock, TrendingUp, Film, Tv, Camera, Music } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function Home() {
   const router = useRouter();
   const [categories, setCategories] = useState({});
   const [recent, setRecent] = useState([]);
+  const [detailItem, setDetailItem] = useState(null);
   const [activeFile, setActiveFile] = useState(null);
-  const [search, setSearch] = useState('');
+  const { searchQuery } = useSearch();
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     if (!getToken()) {
       router.push('/login');
       return;
@@ -32,7 +38,7 @@ export default function Home() {
         fetchRecent().catch(() => []),
       ]);
       setCategories(mediaData);
-      setRecent(recentData);
+      setRecent(recentData.filter(f => f.type === 'video' || f.type === 'tv_series' || f.type === 'series'));
     } catch (err) {
       console.error(err);
     } finally {
@@ -41,32 +47,67 @@ export default function Home() {
   }
 
   const allFiles = Object.values(categories).flatMap((cat) => cat.files || []);
-  const filtered = search
+  const filtered = searchQuery
     ? allFiles.filter((f) =>
-      (f.name || f.filename || '').toLowerCase().includes(search.toLowerCase()) ||
-      (f.title || '').toLowerCase().includes(search.toLowerCase())
+      (f.name || f.filename || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (f.title || '').toLowerCase().includes(searchQuery.toLowerCase())
     )
     : null;
 
+  const handleCardClick = (item) => {
+    const isImmersive = item.type === 'video' || item.type === 'tv_series';
+    if (!isImmersive) {
+      setActiveFile(item);
+      window.history.pushState({ type: 'player' }, '');
+    } else {
+      setDetailItem(item);
+      window.history.pushState({ type: 'detail' }, '');
+    }
+  };
+
+  const handlePlay = (file, startTime = 0) => {
+    setActiveFile({ ...file, initialTime: startTime });
+    window.history.pushState({ type: 'player' }, '');
+    // No longer setting setDetailItem(null) to preserve navigation
+  };
+
+  // Close handlers that also handle history back manually if needed
+  const closeDetail = () => {
+    setDetailItem(null);
+    if (window.history.state?.type === 'detail') {
+      window.history.back();
+    }
+  };
+
+  const closePlayer = () => {
+    setActiveFile(null);
+    if (window.history.state?.type === 'player') {
+      window.history.back();
+    }
+  };
+
+  useEffect(() => {
+    const handlePopState = (e) => {
+      // Use the incoming state to determine what should be open
+      const type = e.state?.type;
+      
+      if (!type) {
+        // Back to home
+        setActiveFile(null);
+        setDetailItem(null);
+      } else if (type === 'detail') {
+        // Back to detail from player
+        setActiveFile(null);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []); // Remove dependencies to avoid stale closures in handlePopState
+
+  if (!mounted) return null;
+
   return (
     <Shell>
-      <header className={styles.header}>
-        <div>
-          <h1 className={styles.greeting}>Welcome back</h1>
-          {/* <p className={styles.subtitle}>Your personal media library</p> */}
-        </div>
-        <div className={styles.searchWrap}>
-          <Search size={18} className={styles.searchIcon} />
-          <input
-            type="text"
-            placeholder="Search your library..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className={styles.searchInput}
-          />
-        </div>
-      </header>
-
       <div className={styles.content}>
         {loading ? (
           <div className={styles.skeletonGrid}>
@@ -79,7 +120,7 @@ export default function Home() {
             <h2 className={styles.sectionTitle}>Search Results</h2>
             <div className={styles.grid}>
               {filtered.map((f, i) => (
-                <MediaCard key={i} file={f} onClick={setActiveFile} />
+                <MediaCard key={i} file={f} onClick={handleCardClick} />
               ))}
               {filtered.length === 0 && (
                 <p className={styles.empty}>No results found.</p>
@@ -88,15 +129,17 @@ export default function Home() {
           </>
         ) : (
           <>
+            <TranscodeQueue />
+
             {recent.length > 0 && (
               <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
-                  <Clock size={20} />
+                  <Clock size={20} className={styles.sectionIcon} />
                   Continue Watching
                 </h2>
                 <div className={styles.row}>
                   {recent.slice(0, 10).map((f, i) => (
-                    <MediaCard key={i} file={f} onClick={setActiveFile} />
+                    <MediaCard key={i} file={f} onClick={handleCardClick} />
                   ))}
                 </div>
               </section>
@@ -107,13 +150,29 @@ export default function Home() {
               return (
                 <section key={key} className={styles.section}>
                   <h2 className={styles.sectionTitle}>
-                    <TrendingUp size={20} />
+                    {cat.name.toLowerCase().includes('movie') ? (
+                      <Film size={20} className={styles.sectionIcon} />
+                    ) : cat.name.toLowerCase().includes('show') || cat.name.toLowerCase().includes('series') ? (
+                      <Tv size={20} className={styles.sectionIcon} />
+                    ) : cat.name.toLowerCase().includes('image') || cat.name.toLowerCase().includes('photo') ? (
+                      <Camera size={20} className={styles.sectionIcon} />
+                    ) : cat.name.toLowerCase().includes('audio') || cat.name.toLowerCase().includes('music') ? (
+                      <Music size={20} className={styles.sectionIcon} />
+                    ) : (
+                      <TrendingUp size={20} className={styles.sectionIcon} />
+                    )}
                     {cat.name}
                   </h2>
                   <div className={styles.row}>
-                    {cat.files.slice(0, 12).map((f, i) => (
-                      <MediaCard key={i} file={f} onClick={setActiveFile} />
-                    ))}
+                    {(() => {
+                      const displayFiles = (key === 'tv_shows' && cat.series) 
+                        ? Object.values(cat.series) 
+                        : cat.files;
+                      
+                      return displayFiles.slice(0, 12).map((f, i) => (
+                        <MediaCard key={i} file={f} onClick={handleCardClick} />
+                      ));
+                    })()}
                   </div>
                 </section>
               );
@@ -122,8 +181,20 @@ export default function Home() {
         )}
       </div>
 
+      {detailItem && (
+        <MediaDetail 
+          item={detailItem} 
+          onClose={closeDetail} 
+          onPlay={handlePlay}
+          onItemClick={setDetailItem}
+        />
+      )}
+
       {activeFile && (
-        <Player file={activeFile} onClose={() => setActiveFile(null)} />
+        <Player 
+          file={activeFile} 
+          onClose={closePlayer} 
+        />
       )}
     </Shell>
   );

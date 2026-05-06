@@ -1,7 +1,9 @@
 'use client';
 
+import { useState, forwardRef } from 'react';
 import { Film, Music, Image as ImageIcon, Star } from 'lucide-react';
-import { formatFileSize, getToken } from '@/lib/api';
+import { useRouter } from 'next/navigation';
+import { formatFileSize, getToken, API_BASE } from '@/lib/api';
 import styles from './MediaCard.module.css';
 
 const typeIcons = {
@@ -10,39 +12,43 @@ const typeIcons = {
   image: ImageIcon,
 };
 
-export default function MediaCard({ file, onClick }) {
+const MediaCard = forwardRef(({ file, onClick }, ref) => {
+  const router = useRouter();
   const Icon = typeIcons[file.type] || Film;
   
+  const handleClick = () => {
+    if (file.type === 'video' || file.type === 'tv_series' || file.type === 'series') {
+      router.push(`/media/${file.id}`);
+    } else {
+      onClick?.(file);
+    }
+  };
+
   let posterUrl = file.tmdb_poster_url || file.thumbnail;
-  if (posterUrl && (posterUrl.startsWith('/images') || posterUrl.startsWith('/thumbnails'))) {
+  if (posterUrl && (posterUrl.startsWith('/images') || posterUrl.startsWith('/thumbnails') || posterUrl.startsWith('/covers'))) {
     const token = getToken();
-    posterUrl = `${posterUrl}?token=${token}`;
+    posterUrl = `${API_BASE}${posterUrl}${posterUrl.includes('?') ? '&' : '?'}token=${token}`;
   }
 
+  const [imgError, setImgError] = useState(false);
+
   const title = file.title || file.name?.replace(/\.[^/.]+$/, '');
+  const isSquare = file.type === 'image' || file.type === 'audio' || file.category === 'images' || file.category === 'photos' || file.category === 'audio';
 
   return (
-    <div className={styles.card} onClick={() => onClick?.(file)}>
+    <div ref={ref} className={`${styles.card} ${isSquare ? styles.squareCard : ''}`} onClick={handleClick}>
       <div className={styles.poster}>
-        {posterUrl ? (
+        {posterUrl && !imgError ? (
           <img
             src={posterUrl}
             alt={title}
             className={styles.posterImage}
             loading="lazy"
+            onError={() => setImgError(true)}
           />
         ) : (
-          <div className={styles.posterFallback}>
+          <div className={`${styles.posterFallback} ${file.type === 'audio' ? styles.audioFallback : ''}`}>
             <Icon size={32} />
-          </div>
-        )}
-        {file.type !== 'image' && (
-          <div className={styles.overlay}>
-            <div className={styles.playBtn}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="5,3 19,12 5,21" />
-              </svg>
-            </div>
           </div>
         )}
         <span className={styles.badge}>{file.type}</span>
@@ -61,4 +67,8 @@ export default function MediaCard({ file, onClick }) {
       </div>
     </div>
   );
-}
+});
+
+MediaCard.displayName = 'MediaCard';
+
+export default MediaCard;

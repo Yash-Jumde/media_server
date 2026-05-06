@@ -1,51 +1,133 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { getToken, fetchMedia } from '@/lib/api';
+import { useSearch } from '@/lib/SearchContext';
 import Shell from '@/components/Shell';
 import MediaCard from '@/components/MediaCard';
 import Player from '@/components/Player';
+import { Camera, Loader2 } from 'lucide-react';
 import styles from '../page.module.css';
 
 export default function ImagesPage() {
   const router = useRouter();
-  const [files, setFiles] = useState([]);
-  const [activeFile, setActiveFile] = useState(null);
+  const [items, setItems] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [isFetching, setIsFetching] = useState(false);
+  const observer = useRef();
+
+  const loadImages = async (pageNum, isInitial = false) => {
+    try {
+      if (isInitial) setLoading(true);
+      else setIsFetching(true);
+      
+      const data = await fetchMedia('images', pageNum, 40);
+      
+      if (isInitial) {
+        setItems(data.items || []);
+      } else {
+        setItems(prev => [...prev, ...(data.items || [])]);
+      }
+      
+      setTotalPages(data.totalPages || 1);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+      setIsFetching(false);
+    }
+  };
 
   useEffect(() => {
     if (!getToken()) { router.push('/login'); return; }
-    fetchMedia().then((data) => {
-      setFiles(data.images?.files || []);
-    }).catch(console.error).finally(() => setLoading(false));
+    loadImages(1, true);
   }, []);
+
+  const lastElementRef = useCallback(node => {
+    if (loading || isFetching) return;
+    if (observer.current) observer.current.disconnect();
+    
+    observer.current = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && page < totalPages) {
+        setPage(prevPage => {
+          const nextPage = prevPage + 1;
+          loadImages(nextPage);
+          return nextPage;
+        });
+      }
+    });
+    
+    if (node) observer.current.observe(node);
+  }, [loading, isFetching, page, totalPages]);
+
+  const { searchQuery } = useSearch();
+
+  const filteredItems = items.filter((f) => {
+    if (!searchQuery) return true;
+    const query = searchQuery.toLowerCase().trim();
+    return (
+      (f.title || '').toLowerCase().includes(query) ||
+      (f.name || '').toLowerCase().includes(query) ||
+      (f.filename || '').toLowerCase().includes(query)
+    );
+  });
 
   return (
     <Shell>
-      <header className={styles.header}>
-        <div>
-          <h1 className={styles.greeting}>Images</h1>
-          <p className={styles.subtitle}>{files.length} images in your library</p>
-        </div>
-      </header>
       <div className={styles.content}>
+        <div className={styles.sectionHeader}>
+          <h1 className={styles.pageTitle}>
+            <Camera size={28} className={styles.titleIcon} />
+            Images
+          </h1>
+        </div>
+
         {loading ? (
           <div className={styles.skeletonGrid}>
-            {Array.from({ length: 8 }).map((_, i) => (
+            {Array.from({ length: 12 }).map((_, i) => (
               <div key={i} className={`${styles.skeletonCard} skeleton`} />
             ))}
           </div>
         ) : (
-          <div className={styles.grid}>
-            {files.map((f, i) => (
-              <MediaCard key={i} file={f} onClick={setActiveFile} />
-            ))}
-            {files.length === 0 && <p className={styles.empty}>No images found.</p>}
-          </div>
+          <>
+            <div className={styles.grid}>
+              {filteredItems.map((f, i) => {
+                const isLast = filteredItems.length === i + 1;
+                return (
+                  <MediaCard 
+                    ref={isLast ? lastElementRef : null}
+                    key={f.id || i} 
+                    file={f} 
+                    onClick={() => setActiveIndex(i)} 
+                  />
+                );
+              })}
+            </div>
+            
+            {isFetching && (
+              <div className={styles.loaderContainer}>
+                <Loader2 className={styles.spinner} />
+              </div>
+            )}
+            
+            {filteredItems.length === 0 && !isFetching && (
+              <p className={styles.empty}>No matching images found.</p>
+            )}
+          </>
         )}
       </div>
-      {activeFile && <Player file={activeFile} onClose={() => setActiveFile(null)} />}
+      {activeIndex !== null && (
+        <Player 
+          file={filteredItems[activeIndex]} 
+          onClose={() => setActiveIndex(null)} 
+          onNext={() => setActiveIndex((prev) => (prev + 1) % filteredItems.length)}
+          onPrev={() => setActiveIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length)}
+        />
+      )}
     </Shell>
   );
 }

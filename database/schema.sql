@@ -56,7 +56,6 @@ CREATE TABLE IF NOT EXISTS media_files (
     tmdb_cast TEXT,
     tmdb_runtime INTEGER,
     -- Status
-    is_favorite BOOLEAN DEFAULT FALSE,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (category_id) REFERENCES categories (id),
@@ -66,15 +65,15 @@ CREATE TABLE IF NOT EXISTS media_files (
 -- Indexes for performance
 CREATE INDEX IF NOT EXISTS idx_media_category ON media_files(category_id);
 CREATE INDEX IF NOT EXISTS idx_media_series ON media_files(series_id);
-CREATE INDEX IF NOT EXISTS idx_media_favorite ON media_files(is_favorite);
 
 -- Users table (multi-user ready, single admin for now)
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT UNIQUE NOT NULL,
     password_hash TEXT NOT NULL,
-    role TEXT DEFAULT 'admin',
+    role TEXT DEFAULT 'user',
     avatar_url TEXT,
+    is_approved BOOLEAN DEFAULT FALSE,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 

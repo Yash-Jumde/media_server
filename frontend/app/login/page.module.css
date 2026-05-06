@@ -107,10 +107,40 @@
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
-.error {
-  font-size: 0.8rem;
-  color: var(--danger);
+.error.pending {
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.footerLinks {
+  margin-top: 32px;
   text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.successLogo {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+}
+
+.successText {
+  margin-bottom: 16px;
+  line-height: 1.5;
 }
 
 .button {
