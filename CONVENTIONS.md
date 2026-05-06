@@ -6,7 +6,7 @@ This project is developed by a specialized team of AI agents, each with dedicate
 
 1. **Orchestrator** (Default Antigravity): Manages the high-level roadmap, coordinates between agents, and communicates with the user.
 2. **Database Architect**: Owns `database/`, SQLite schema, and query logic.
-3. **Frontend Visual Designer**: Owns `client/`, CSS architecture, and visual aesthetics.
+3. **Frontend Visual Designer**: Owns `frontend/`, CSS architecture, and visual aesthetics.
 4. **Backend Engineer**: Owns `server/`, API routes, and media processing logic.
 
 ## Coordination Protocol
@@ -27,7 +27,7 @@ Before starting a task in a specific domain, the **Orchestrator** MUST:
 ## File Ownership
 - `.antigravity/agents/`: Agent definitions.
 - `database/`: Primary domain of Database Architect.
-- `client/`: Primary domain of Frontend Visual Designer.
+- `frontend/`: Primary domain of Frontend Visual Designer.
 - `server/`: Primary domain of Backend Engineer.
 
 ---
