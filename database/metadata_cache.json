@@ -1,0 +1,140 @@
+{
+  "the batman 2022_2022": {
+    "adult": false,
+    "backdrop_path": "/rvtdN5XkWAfGX6xDuPL6yYS2seK.jpg",
+    "genre_ids": [
+      80,
+      9648,
+      53
+    ],
+    "id": 414906,
+    "original_language": "en",
+    "original_title": "The Batman",
+    "overview": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
+    "popularity": 15.9979,
+    "poster_path": "/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+    "release_date": "2022-03-01",
+    "title": "The Batman",
+    "video": false,
+    "vote_average": 7.7,
+    "vote_count": 11790
+  },
+  "dune_2021": {
+    "adult": false,
+    "backdrop_path": "/qVgZu5BTx6pu4owCvVOm4zjTfOi.jpg",
+    "genre_ids": [
+      878,
+      12
+    ],
+    "id": 438631,
+    "original_language": "en",
+    "original_title": "Dune",
+    "overview": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
+    "popularity": 23.5171,
+    "poster_path": "/gDzOcq0pfeCeqMBwKIJlSmQpjkZ.jpg",
+    "release_date": "2021-09-15",
+    "title": "Dune",
+    "video": false,
+    "vote_average": 7.8,
+    "vote_count": 14716
+  },
+  "free guy_2021": {
+    "adult": false,
+    "backdrop_path": "/7py8kUCYaOdFn1TfVS87BDBySOz.jpg",
+    "genre_ids": [
+      35,
+      12,
+      878
+    ],
+    "id": 550988,
+    "original_language": "en",
+    "original_title": "Free Guy",
+    "overview": "A bank teller discovers he is actually a background player in an open-world video game, and decides to become the hero of his own story. Now, in a world where there are no limits, he is determined to be the guy who saves his world his way before it's too late.",
+    "popularity": 11.3199,
+    "poster_path": "/dxraF0qPr1OEgJk17ltQTO84kQF.jpg",
+    "release_date": "2021-08-11",
+    "title": "Free Guy",
+    "video": false,
+    "vote_average": 7.452,
+    "vote_count": 9706
+  },
+  "reservoir dogs_1992": {
+    "adult": false,
+    "backdrop_path": "/jwt159hXWA9Q5xpBo8hWb3zwLi7.jpg",
+    "genre_ids": [
+      80,
+      53
+    ],
+    "id": 500,
+    "original_language": "en",
+    "original_title": "Reservoir Dogs",
+    "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.",
+    "popularity": 13.2884,
+    "poster_path": "/xi8Iu6qyTfyZVDVy60raIOYJJmk.jpg",
+    "release_date": "1992-09-02",
+    "title": "Reservoir Dogs",
+    "video": false,
+    "vote_average": 8.116,
+    "vote_count": 15347
+  },
+  "star wars the force awakens_2015": {
+    "adult": false,
+    "backdrop_path": "/8BTsTfln4jlQrLXUBquXJ0ASQy9.jpg",
+    "genre_ids": [
+      12,
+      28,
+      878
+    ],
+    "id": 140607,
+    "original_language": "en",
+    "original_title": "Star Wars: The Force Awakens",
+    "overview": "Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo Ren and his army of Stormtroopers.",
+    "popularity": 15.8534,
+    "poster_path": "/wqnLdwVXoBjKibFRR5U3y0aDUhs.jpg",
+    "release_date": "2015-12-15",
+    "title": "Star Wars: The Force Awakens",
+    "video": false,
+    "vote_average": 7.2,
+    "vote_count": 20434
+  },
+  "ved (वेड)_any": {
+    "adult": false,
+    "backdrop_path": "/nPBaJKudqdAMpTTcxDt0LtuIgua.jpg",
+    "genre_ids": [
+      18,
+      10749
+    ],
+    "id": 913544,
+    "original_language": "mr",
+    "original_title": "वेड",
+    "overview": "Satya lives in a railway colony who dreams of playing for the railway cricket team and eventually representing Team India. Soon he falls madly in love with Nisha. However, Satya`s life takes a drastic change when a local Politician Bhaskar creates havoc in his personal and professional life. 12 Years Later, Satya is a drunk miserable man hopelessly waiting for his love. He is married to Shravani who has been crazily in love with Satya since her childhood. Who`s love has more madness - Satya or Shravani?",
+    "popularity": 1.0409,
+    "poster_path": "/kNd1IkaAVOvrkDqvCsjEiSrWn29.jpg",
+    "release_date": "2022-12-30",
+    "title": "Ved",
+    "video": false,
+    "vote_average": 7.1,
+    "vote_count": 10
+  },
+  "the batman_2022": {
+    "adult": false,
+    "backdrop_path": "/rvtdN5XkWAfGX6xDuPL6yYS2seK.jpg",
+    "genre_ids": [
+      80,
+      9648,
+      53
+    ],
+    "id": 414906,
+    "title": "The Batman",
+    "original_language": "en",
+    "original_title": "The Batman",
+    "overview": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
+    "popularity": 19.7287,
+    "poster_path": "/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+    "release_date": "2022-03-01",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.66,
+    "vote_count": 11854
+  }
+}

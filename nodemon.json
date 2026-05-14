@@ -1,0 +1,14 @@
+{
+  "ignore": [
+    "logs/*",
+    "database/*",
+    "transcoded/*",
+    "public/thumbnails/*",
+    "public/covers/*",
+    "frontend/*",
+    "scratch/*",
+    "*.log"
+  ],
+  "ext": "js,json,sql",
+  "delay": "500"
+}

@@ -17,10 +17,11 @@ The Personal Media Server is a lightweight, self-hosted application that allows 
 - Users who want a simple, lightweight alternative to more complex media servers
 ### Technology Stack
 - **Backend**: Node.js with Express
-- **Frontend**: Vanilla JavaScript, HTML, CSS
+- **Frontend**: Next.js (React) with Tailwind-like CSS Modules
 - **Media Processing**: FFmpeg for transcoding and thumbnail generation
 - **Authentication**: JWT (JSON Web Tokens)
 - **Security**: Helmet for HTTP security headers
+- **Database**: SQLite3 for metadata and user data
 ## 2. Table of Contents
 1. [Project Overview](null)
 2. [Table of Contents](null)
@@ -70,7 +71,7 @@ The Personal Media Server is a lightweight, self-hosted application that allows 
 - FFmpeg with libx264 and aac codecs
 - Git (for installation from source)
 #### Network Requirements
-- Open port for the server (default: 3000)
+- Open port for the server (Backend: 5000, Frontend: 3000)
 - Local network connectivity for client devices
 ### Installation Steps
 16. Clone the repository:
@@ -93,17 +94,20 @@ PORT=3000
 JWT_SECRET=your_secret_key_here
 ADMIN_PASSWORD=your_login_password
 ```
-20. Start the server:
+20. Start the server (Backend and Frontend concurrently):
 ```bash
-npm start
+npm run dev
 ```
 ### Verification
 21. Check the console output for successful startup messages:
 ```
-Server running on http://localhost:3000
-Access on your network at http://192.168.1.x:3000
+🚀 Media Server is running!
+-------------------------------------------
+📺 Frontend UI: http://localhost:3000
+📡 Backend API: http://localhost:5000
+-------------------------------------------
 ```
-22. Open a web browser and navigate to the URL shown in the console.
+22. Open a web browser and navigate to `http://localhost:3000`.
 23. You should see a login page. Enter your configured password to access the media library.
 ## 4. Architecture Documentation
 ### System Architecture
@@ -129,18 +133,17 @@ graph TD
 ### Directory Structure
 ```
 personal_server/
-├── client/
-│   └── public/            # Frontend static files
-│       ├── app.js         # Main client-side application logic
-│       ├── index.html     # Main HTML page
-│       ├── login.html     # Login page
-│       └── styles.css     # CSS styles
+├── frontend/              # Next.js frontend application
+│   ├── app/               # Next.js App Router (pages and layouts)
+│   ├── components/        # React components (Player, MediaCard, etc.)
+│   ├── lib/               # Shared libraries and API utilities
+│   └── public/            # Static assets (icons, fonts)
 ├── media/                 # Media storage directory
 │   ├── movies/            # Movie files
 │   ├── tv_shows/          # TV show files
 │   ├── images/            # Image files
 │   └── audio/             # Audio files
-├── server/                # Server-side code
+├── server/                # Express backend code
 │   ├── middleware/        # Express middleware
 │   │   ├── auth.js        # Authentication middleware
 │   │   └── rangeRequest.js # Range request handler for streaming
@@ -151,17 +154,18 @@ personal_server/
 │       ├── mediaWatcher.js # Media file change detection
 │       ├── thumbnailGenerator.js # Thumbnail creation
 │       └── videoConverter.js # Video format conversion
+├── database/              # SQLite database and schema
 ├── thumbnails/            # Generated thumbnails directory
 ├── transcoded/            # Transcoded media files
 ├── adaptive/              # Adaptive streaming files
-└── server.js              # Main server application
+└── server.js              # Main server application entry point
 ```
 ### Design Patterns
 30. **Middleware Pattern**: The application uses Express middleware for authentication, logging, and request handling.
 31. **Module Pattern**: Functionality is organized into modules (fileScanner, thumbnailGenerator, etc.) that expose specific functions.
 32. **REST API**: The server exposes RESTful endpoints for client-server communication.
 33. **Background Processing**: Media preprocessing happens asynchronously to avoid blocking the main thread.
-34. **MVC-like Structure**: Separation of concerns between data handling (server/utils), routing (server.js), and presentation (client).
+34. **MVC-like Structure**: Separation of concerns between data handling (server/utils), routing (server.js), and presentation (frontend).
 ## 5. Configuration Guide
 ### Configuration Files
 The main configuration is handled through environment variables or a `.env` file in the project root. Here are the key configuration options:
@@ -384,14 +388,14 @@ convertToMP4            // Converts video to MP4 format
 needsConversion         // Checks if video needs conversion
 getWebFriendlyPath      // Gets path to web-friendly version
 ```
-60. [**app.js](file:///home/waltazar/Desktop/personal_server/client/public/app.js)**: Frontend JavaScript
+60. [**Player.js**](file:///C:/Users/LENOVO/Desktop/media_server/media_server/frontend/components/Player.js): Next.js Player Component
 ```javascript
-// Key classes and methods:
-MediaPlayer            // Main class for the media player
-renderCategorizedMedia // Renders media by category
-groupTvShowsBySeries   // Groups TV shows by series name
-showTvSeriesEpisodes   // Shows episodes for a TV series
-play                   // Plays a media file
+// Key features:
+- Integrated playback controls
+- Automatic transcode polling
+- Keyboard shortcut support
+- Progress tracking integration
+- Playback resume logic
 ```
 ### Contributing Guidelines
 If you want to contribute to the Personal Media Server:
@@ -483,6 +487,6 @@ For movies, any naming convention is fine.
 **Q: Where are transcoded files stored?**
 A: Transcoded files are stored in the `transcoded` directory at the project root.
 **Q: How can I customize the appearance of the web interface?**
-A: Edit the CSS in [styles.css](file:///home/waltazar/Desktop/personal_server/client/public/styles.css) to customize the appearance.
+A: Edit the CSS in `frontend/app/globals.css` or the specific `.module.css` files in `frontend/components/` and `frontend/app/` to customize the appearance.
 **Q: Can I use this server with my smart TV or other media devices?**
 A: Any device with a modern web browser can access the web interface. For dedicated media players, compatibility will depend on their ability to play media from web sources.
