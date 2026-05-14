@@ -329,7 +329,7 @@ export default function Player({ file, onClose, onNext, onPrev, nextEpisode, onP
                   isFullscreen={isFullscreen} toggleFullscreen={toggleFullscreen}
                   isFavorite={isFavorite} onToggleFavorite={handleToggleFavorite}
                 >
-                  <ProgressBar currentTime={currentTime} duration={duration} onSeek={handleSeek} />
+                  <ProgressBar currentTime={currentTime} duration={duration} onSeek={handleSeek} mediaId={id} />
                 </Controls>
               )}
                 </>

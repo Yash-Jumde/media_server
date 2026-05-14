@@ -58,6 +58,9 @@ export function Controls({
               setIsMuted(false);
             }}
             className={styles.volumeSlider}
+            style={{
+              background: `linear-gradient(to right, #fff 0%, #fff ${(isMuted ? 0 : volume) * 100}%, rgba(255, 255, 255, 0.2) ${(isMuted ? 0 : volume) * 100}%, rgba(255, 255, 255, 0.2) 100%)`
+            }}
           />
         </div>
 

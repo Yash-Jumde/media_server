@@ -77,6 +77,7 @@ app.use('/api', authRoutes);
 app.use('/api', adminRoutes);
 app.use('/api', userRoutes);
 app.use('/covers', express.static(path.join(__dirname, 'covers')));
+app.use('/transcoded', express.static(path.join(__dirname, 'transcoded')));
 app.use('/api', mediaRouter);
 app.use('/api', tvShowsRouter);
 app.use('/api', libraryRouter);

@@ -1,0 +1,1823 @@
+
+--- Server Session Started: 2026-05-06T19:04:21.733Z ---
+
+[dotenv@17.0.1] injecting env (3) from .env – [tip] encrypt with dotenvx: https://dotenvx.com
+[TMDB] Scraper initialized.
+
+🚀 Media Server is running on port 5000!
+[Server] Initializing database...
+[TMDB] Loaded 6 items from metadata cache.
+Connected to the SQLite database.
+Database schema verified/initialized.
+[Server] Starting FileWatcher...
+[FileWatcher] Starting watcher on: E:\Projects\media_server\media_server\media
+Starting initial library scan...
+[FileWatcher] Initial scan complete. Watching for changes...
+Cleaning up stale database records...
+Database sync complete. Added 0 new files, removed 30 stale entries.
+Server initialized. Ready for playback.
+[TMDB] Starting metadata scrape for all unscraped media...
+[TMDB] Metadata scrape complete.
+[0mGET /api/transcode/queue [36m304[0m 5.158 ms - -[0m
+[0mGET /api/recent [32m200[0m 21.030 ms - 2[0m
+[0mGET /api/transcode/queue [36m304[0m 2.429 ms - -[0m
+[0mGET /api/media [32m200[0m 15.603 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.350 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.420 ms - -[0m
+[0mGET /images/370?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 30.420 ms - -[0m
+[0mGET /images/333?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 12.713 ms - -[0m
+[0mGET /images/334?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 10.637 ms - -[0m
+[0mGET /images/330?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 27.617 ms - -[0m
+[0mGET /images/331?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 23.269 ms - -[0m
+[0mGET /images/332?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 20.496 ms - -[0m
+[0mGET /images/335?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 16.459 ms - -[0m
+[0mGET /images/337?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 7.233 ms - -[0m
+[0mGET /images/336?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 16.158 ms - -[0m
+[0mGET /images/372?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 12.858 ms - -[0m
+[0mGET /images/371?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 16.837 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.871 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.097 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.098 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.403 ms - -[0m
+[0mGET /api/media/explore?category=images&page=1&limit=40 [32m200[0m 6.937 ms - -[0m
+[0mGET /api/media/explore?category=images&page=1&limit=40 [36m304[0m 5.862 ms - -[0m
+[0mGET /images/338?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 34.796 ms - -[0m
+[0mGET /images/339?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 32.308 ms - -[0m
+[0mGET /images/340?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 31.691 ms - -[0m
+[0mGET /images/341?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 35.739 ms - -[0m
+[0mGET /images/342?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 34.119 ms - -[0m
+[0mGET /images/343?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 31.235 ms - -[0m
+[0mGET /images/344?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 37.029 ms - -[0m
+[0mGET /images/345?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 51.741 ms - -[0m
+[0mGET /images/346?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 36.259 ms - -[0m
+[0mGET /images/347?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 38.864 ms - -[0m
+[0mGET /images/351?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.570 ms - -[0m
+[0mGET /images/349?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 36.784 ms - -[0m
+[0mGET /images/352?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 27.645 ms - -[0m
+[0mGET /images/355?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 36.612 ms - -[0m
+[0mGET /images/356?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 36.162 ms - -[0m
+[0mGET /images/358?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 26.389 ms - -[0m
+[0mGET /images/360?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 22.425 ms - -[0m
+[0mGET /images/361?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 20.765 ms - -[0m
+[0mGET /images/362?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 19.545 ms - -[0m
+[0mGET /images/363?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 23.088 ms - -[0m
+[0mGET /images/364?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 12.538 ms - -[0m
+[0mGET /images/365?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 10.973 ms - -[0m
+[0mGET /images/366?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 11.731 ms - -[0m
+[0mGET /images/353?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 5.950 ms - -[0m
+[0mGET /images/348?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 5.400 ms - -[0m
+[0mGET /images/359?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 8.132 ms - -[0m
+[0mGET /images/350?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 6.519 ms - -[0m
+[0mGET /images/354?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 27.999 ms - -[0m
+[0mGET /images/357?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.522 ms - -[0m
+[0mGET /api/media/explore?category=images&page=2&limit=40 [32m200[0m 21.175 ms - -[0m
+[0mGET /api/media/explore?category=images&page=2&limit=40 [36m304[0m 4.351 ms - -[0m
+[0mGET /images/368?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m200[0m 8.280 ms - 2285049[0m
+[0mGET /images/367?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m200[0m 9.378 ms - 2764430[0m
+[0mGET /images/369?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m200[0m 6.845 ms - 2837376[0m
+[0mGET /api/transcode/queue [36m304[0m 3.840 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.070 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.485 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.479 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.010 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.720 ms - -[0m
+[0mGET /api/recent [36m304[0m 3.979 ms - -[0m
+[0mGET /api/media [36m304[0m 13.772 ms - -[0m
+[0mGET /api/recent [36m304[0m 7.042 ms - -[0m
+[0mGET /api/media [36m304[0m 9.537 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.604 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.191 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.789 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 6.398 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 7.105 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.058 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.689 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.841 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.403 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.379 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.294 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.982 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.940 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.822 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 7.348 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.716 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.895 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.211 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.023 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.368 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.989 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.203 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 6.352 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.900 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.271 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.341 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 7.254 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 6.668 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.837 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 7.158 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.635 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.329 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.169 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.672 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.940 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 6.310 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.962 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.880 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.583 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.576 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.200 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.661 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.644 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.221 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.755 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.415 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.347 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.883 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.035 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.522 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.147 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.804 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.155 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.150 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.792 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.796 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.407 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.384 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.320 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.388 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.216 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.270 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.342 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.849 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.311 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.375 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.627 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.475 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.749 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.888 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.291 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.763 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.649 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.569 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.406 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.114 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.484 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.692 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.754 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.816 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.915 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.626 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.908 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.394 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.971 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.578 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.662 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.051 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.534 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.784 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.487 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.135 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.697 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.092 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.756 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.635 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.595 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.956 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.529 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.915 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.535 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.317 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.143 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.110 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.283 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.887 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.310 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.114 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.833 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.425 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.983 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.474 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.752 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 6.199 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.373 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.918 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.306 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.093 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.077 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.235 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.747 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.538 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.442 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.976 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.154 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.410 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.344 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.777 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.950 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.788 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.028 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.279 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.898 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.304 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.720 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.654 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.287 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.094 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.198 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.883 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.945 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.012 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.463 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.424 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.628 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.543 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.691 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 6.560 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.921 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.624 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.041 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.847 ms - -[0m
+[0mGET /api/media/explore?category=images&page=1&limit=40 [36m304[0m 7.064 ms - -[0m
+[0mGET /api/media/explore?category=images&page=1&limit=40 [36m304[0m 4.025 ms - -[0m
+[0mGET /images/339?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.438 ms - -[0m
+[0mGET /images/341?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 19.146 ms - -[0m
+[0mGET /images/340?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.288 ms - -[0m
+[0mGET /images/342?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 18.846 ms - -[0m
+[0mGET /images/343?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 29.227 ms - -[0m
+[0mGET /images/344?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 26.404 ms - -[0m
+[0mGET /images/345?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 25.695 ms - -[0m
+[0mGET /images/349?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 16.403 ms - -[0m
+[0mGET /images/346?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 25.412 ms - -[0m
+[0mGET /images/347?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 22.486 ms - -[0m
+[0mGET /images/351?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 25.671 ms - -[0m
+[0mGET /images/352?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 22.917 ms - -[0m
+[0mGET /images/355?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.944 ms - -[0m
+[0mGET /images/356?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.194 ms - -[0m
+[0mGET /images/358?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 29.074 ms - -[0m
+[0mGET /images/360?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 27.990 ms - -[0m
+[0mGET /images/361?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 78.954 ms - -[0m
+[0mGET /images/362?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 77.110 ms - -[0m
+[0mGET /images/364?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 35.337 ms - -[0m
+[0mGET /images/363?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 41.263 ms - -[0m
+[0mGET /images/365?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 29.807 ms - -[0m
+[0mGET /images/366?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 31.675 ms - -[0m
+[0mGET /images/348?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 42.834 ms - -[0m
+[0mGET /images/350?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 41.977 ms - -[0m
+[0mGET /images/353?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 33.303 ms - -[0m
+[0mGET /images/354?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 31.912 ms - -[0m
+[0mGET /images/357?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 29.459 ms - -[0m
+[0mGET /images/359?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 27.057 ms - -[0m
+[0mGET /api/media/explore?category=images&page=2&limit=40 [36m304[0m 3.265 ms - -[0m
+[0mGET /api/media/explore?category=images&page=2&limit=40 [36m304[0m 2.616 ms - -[0m
+[0mGET /images/369?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 7.114 ms - -[0m
+[0mGET /images/368?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 3.339 ms - -[0m
+[0mGET /images/367?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 6.067 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.846 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.690 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.264 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.863 ms - -[0m
+[0mGET /api/recent [36m304[0m 4.028 ms - -[0m
+[0mGET /api/media [36m304[0m 14.334 ms - -[0m
+[0mGET /api/recent [36m304[0m 3.090 ms - -[0m
+[0mGET /api/media [36m304[0m 7.283 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.533 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.100 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.837 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.671 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.018 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.769 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.877 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.128 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.027 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.916 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.591 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.086 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.222 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.738 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.201 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 7.167 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.849 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.275 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.519 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.113 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.272 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.461 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.586 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.642 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.898 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.917 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.672 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 6.284 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.854 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.337 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.591 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.011 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.134 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.160 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.875 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.634 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.404 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.354 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.245 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.859 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.752 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.583 ms - -[0m
+
+--- Server Session Started: 2026-05-06T19:40:24.255Z ---
+
+[dotenv@17.0.1] injecting env (3) from .env – [tip] encrypt with dotenvx: https://dotenvx.com
+[TMDB] Scraper initialized.
+
+🚀 Media Server is running on port 5000!
+[Server] Initializing database...
+[TMDB] Loaded 6 items from metadata cache.
+Connected to the SQLite database.
+Database schema verified/initialized.
+[Server] Starting FileWatcher...
+[FileWatcher] Starting watcher on: E:\Projects\media_server\media_server\media
+Starting initial library scan...
+[FileWatcher] Initial scan complete. Watching for changes...
+Cleaning up stale database records...
+Database sync complete. Added 0 new files, removed 0 stale entries.
+Server initialized. Ready for playback.
+[TMDB] Starting metadata scrape for all unscraped media...
+[TMDB] Metadata scrape complete.
+[0mGET /api/recent [36m304[0m 10.904 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.669 ms - -[0m
+[0mGET /api/media [36m304[0m 36.916 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.036 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.313 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.023 ms - -[0m
+[0mGET /images/330?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 40.586 ms - -[0m
+[0mGET /images/370?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 49.224 ms - -[0m
+[0mGET /images/331?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 42.527 ms - -[0m
+[0mGET /images/332?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 51.106 ms - -[0m
+[0mGET /images/333?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 49.675 ms - -[0m
+[0mGET /images/334?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 49.408 ms - -[0m
+[0mGET /images/371?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 35.432 ms - -[0m
+[0mGET /images/372?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 24.894 ms - -[0m
+[0mGET /images/335?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 22.735 ms - -[0m
+[0mGET /images/336?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 18.988 ms - -[0m
+[0mGET /images/337?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 15.210 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.942 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.619 ms - -[0m
+[0mGET /api/tv-shows/Peaky%2520Blinders [32m200[0m 4.906 ms - 675[0m
+[0mGET /api/tv-shows/Peaky%2520Blinders [36m304[0m 4.310 ms - -[0m
+[0mGET /api/series-resume/Peaky%2520Blinders [36m304[0m 3.206 ms - -[0m
+[0mGET /api/series-resume/Peaky%2520Blinders [36m304[0m 3.702 ms - -[0m
+[0mGET /api/recommendations/Peaky%20Blinders [32m200[0m 4.604 ms - 2[0m
+[0mGET /api/recommendations/Peaky%20Blinders [36m304[0m 4.041 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.373 ms - -[0m
+[0mGET /api/recent [36m304[0m 7.446 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.420 ms - -[0m
+[0mGET /api/media [36m304[0m 19.848 ms - -[0m
+[0mGET /api/recent [36m304[0m 4.203 ms - -[0m
+[0mGET /api/media [36m304[0m 6.409 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.138 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.173 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.196 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.499 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.429 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.523 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.288 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.273 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.645 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.639 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.145 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.477 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.216 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.311 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.718 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.397 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.713 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.242 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.683 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.414 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.257 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.884 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.571 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.970 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.517 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.509 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.417 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.464 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.700 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.982 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.850 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.980 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.569 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.555 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.224 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.764 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.928 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.271 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.828 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.937 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.750 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.010 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.339 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.647 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.343 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.349 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.034 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.407 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.560 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.601 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.667 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.299 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.480 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.736 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.656 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.427 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.188 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.577 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.013 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.895 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.554 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.367 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.626 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.863 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.884 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.019 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.503 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.236 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.741 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.883 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.684 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.316 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.683 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.643 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.427 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.534 ms - -[0m
+[FileWatcher] New file detected: The.Batman.2022.1080p.UHD.WEB-DL.x265.10Bit.6CH-Pahe.in.mkv
+[FileWatcher] Added to database: The.Batman.2022.1080p.UHD.WEB-DL.x265.10Bit.6CH-Pahe.in.mkv
+[0mGET /api/transcode/queue [36m304[0m 5.054 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.241 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.927 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.930 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.517 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.929 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.237 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.698 ms - -[0m
+Cleaning up stale database records...
+Database sync complete. Added 1 new files, removed 0 stale entries.
+[TMDB] Starting metadata scrape for all unscraped media...
+[0mGET /api/scan [32m200[0m 265.397 ms - 57[0m
+[TMDB] Searching movie: "The Batman 2022" (2022)
+[TMDB] Cache Hit: "The Batman 2022"
+[TranscodeManager] Starting: The.Batman.2022.1080p.UHD.WEB-DL.x265.10Bit.6CH-Pahe.in.mkv
+ffmpeg version 6.0-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+[HWEncoder] Testing h264_nvenc...
+[HWEncoder] h264_nvenc is functional.
+[0mGET /api/transcode/queue [32m200[0m 2.140 ms - 602[0m
+[TranscodeManager] Starting: The.Batman.2022.1080p.UHD.WEB-DL.x265.10Bit.6CH-Pahe.in.mkv
+[0mGET /api/recent [36m304[0m 3.692 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.636 ms - -[0m
+[0mGET /api/media [32m200[0m 16.381 ms - -[0m
+[0mGET /images/370?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 6.214 ms - -[0m
+[0mGET /images/330?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 10.167 ms - -[0m
+[0mGET /images/331?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 7.492 ms - -[0m
+[0mGET /images/332?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 15.440 ms - -[0m
+[0mGET /images/333?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 22.887 ms - -[0m
+[0mGET /images/334?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 29.953 ms - -[0m
+[0mGET /images/335?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 22.861 ms - -[0m
+[0mGET /images/336?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 35.435 ms - -[0m
+[0mGET /images/371?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 37.131 ms - -[0m
+[0mGET /images/372?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 38.108 ms - -[0m
+[0mGET /images/337?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 35.500 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.596 ms - -[0m
+[0mGET /thumbnails/The.Batman.2022.1080p.UHD.WEB-DL.x265.10Bit.6CH-Pahe.in.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [33m404[0m 4.740 ms - 209[0m
+[0mGET /api/transcode/queue [36m304[0m 2.826 ms - -[0m
+[TMDB] Scraped: "The Batman" (2022-03-01)
+[TMDB] Searching movie: "The Batman 2022" (2022)
+[TMDB] Cache Hit: "The Batman 2022"
+[TMDB] Scraped: "The Batman" (2022-03-01)
+[0mGET /api/transcode/queue [36m304[0m 2.615 ms - -[0m
+[TMDB] Metadata scrape complete.
+[0mGET /api/transcode/queue [36m304[0m 3.598 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.094 ms - 602[0m
+[0mGET /api/transcode/queue [36m304[0m 2.614 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.313 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.883 ms - 602[0m
+[0mGET /api/transcode/queue [36m304[0m 2.698 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.413 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.796 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.702 ms - 602[0m
+[0mGET /api/transcode/queue [36m304[0m 1.873 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.734 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.980 ms - 602[0m
+
+--- Server Session Started: 2026-05-06T19:45:54.736Z ---
+
+[dotenv@17.0.1] injecting env (3) from .env – [tip] encrypt with dotenvx: https://dotenvx.com
+[TMDB] Scraper initialized.
+
+🚀 Media Server is running on port 5000!
+[Server] Initializing database...
+[TMDB] Loaded 6 items from metadata cache.
+Connected to the SQLite database.
+Database schema verified/initialized.
+[Server] Starting FileWatcher...
+[FileWatcher] Starting watcher on: E:\Projects\media_server\media_server\media
+Starting initial library scan...
+[FileWatcher] Initial scan complete. Watching for changes...
+[0mGET /api/transcode/queue [32m200[0m 11.231 ms - 290[0m
+[0mGET /api/transcode/queue [36m304[0m 4.885 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.545 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.823 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.201 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.391 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.180 ms - -[0m
+Cleaning up stale database records...
+Database sync complete. Added 1 new files, removed 2 stale entries.
+Server initialized. Ready for playback.
+[TMDB] Starting metadata scrape for all unscraped media...
+[0mGET /api/transcode/queue [32m200[0m 11.771 ms - 188[0m
+[TMDB] Searching movie: "The Batman" (2022)
+[TranscodeManager] Starting: The Batman (2022).mkv
+ffmpeg version 6.0-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+[HWEncoder] Testing h264_nvenc...
+[HWEncoder] h264_nvenc is functional.
+[0mGET /api/transcode/queue [32m200[0m 3.812 ms - 389[0m
+[0mGET /api/transcode/queue [36m304[0m 5.106 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.516 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.136 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 6.099 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.442 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.299 ms - -[0m
+[TMDB] Retry 1/5 for /3/search/movie?api_key=53a063030afedc3e8d34c28c66054125&query=The%20Batman&year=2022 (Error: Client network socket disconnected before secure TLS connection was established). Waiting 1000ms...
+[0mGET /api/transcode/queue [36m304[0m 9.147 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.463 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.574 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.000 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.658 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.806 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.447 ms - -[0m
+[TMDB] Retry 2/5 for /3/search/movie?api_key=53a063030afedc3e8d34c28c66054125&query=The%20Batman&year=2022 (Error: Client network socket disconnected before secure TLS connection was established). Waiting 2000ms...
+[0mGET /api/transcode/queue [36m304[0m 3.090 ms - -[0m
+[TMDB] Retry 3/5 for /3/search/movie?api_key=53a063030afedc3e8d34c28c66054125&query=The%20Batman&year=2022 (Error: Client network socket disconnected before secure TLS connection was established). Waiting 4000ms...
+[0mGET /api/recent [36m304[0m 6.836 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 7.776 ms - 389[0m
+[0mGET /api/media [32m200[0m 18.142 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 6.416 ms - -[0m
+[0mGET /images/370?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 24.852 ms - -[0m
+[0mGET /images/330?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 22.026 ms - -[0m
+[0mGET /images/334?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 10.698 ms - -[0m
+[0mGET /images/331?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 21.091 ms - -[0m
+[0mGET /images/332?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 18.456 ms - -[0m
+[0mGET /images/333?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 16.656 ms - -[0m
+[0mGET /thumbnails/The%20Batman%20(2022).jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [33m404[0m 1.709 ms - 175[0m
+[0mGET /images/372?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 13.755 ms - -[0m
+[0mGET /images/336?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 20.073 ms - -[0m
+[0mGET /images/371?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 19.607 ms - -[0m
+[0mGET /images/335?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 30.353 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 39.246 ms - -[0m
+[0mGET /images/337?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 33.115 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.769 ms - -[0m
+[TMDB] Retry 1/5 for /3/movie/414906?api_key=53a063030afedc3e8d34c28c66054125&append_to_response=credits (Error: Client network socket disconnected before secure TLS connection was established). Waiting 1000ms...
+[TMDB] Retry 2/5 for /3/movie/414906?api_key=53a063030afedc3e8d34c28c66054125&append_to_response=credits (Error: Client network socket disconnected before secure TLS connection was established). Waiting 2000ms...
+[0mGET /api/transcode/queue [32m200[0m 6.089 ms - 389[0m
+[0mGET /api/transcode/queue [36m304[0m 5.051 ms - -[0m
+[TMDB] Scraped: "The Batman" (2022-03-01)
+[TMDB] Metadata scrape complete.
+[0mGET /api/transcode/queue [32m200[0m 5.279 ms - 389[0m
+[0mGET /api/transcode/queue [36m304[0m 3.656 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.587 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.297 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 4.072 ms - 389[0m
+[0mGET /api/transcode/queue [36m304[0m 3.764 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.408 ms - 389[0m
+[0mGET /api/transcode/queue [36m304[0m 3.732 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 6.478 ms - 389[0m
+[0mGET /api/transcode/queue [36m304[0m 5.724 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 4.743 ms - 389[0m
+[0mGET /api/transcode/queue [36m304[0m 3.278 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.745 ms - 389[0m
+[0mGET /api/transcode/queue [36m304[0m 6.871 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.184 ms - 389[0m
+[0mGET /api/transcode/queue [36m304[0m 5.855 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.412 ms - 390[0m
+[0mGET /api/transcode/queue [36m304[0m 4.210 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.128 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.039 ms - -[0m
+
+--- Server Session Started: 2026-05-06T19:47:41.574Z ---
+
+[dotenv@17.0.1] injecting env (3) from .env – [tip] encrypt with dotenvx: https://dotenvx.com
+[TMDB] Scraper initialized.
+
+🚀 Media Server is running on port 5000!
+[Server] Initializing database...
+[TMDB] Loaded 7 items from metadata cache.
+Connected to the SQLite database.
+Database schema verified/initialized.
+[Server] Starting FileWatcher...
+[FileWatcher] Starting watcher on: E:\Projects\media_server\media_server\media
+Starting initial library scan...
+[FileWatcher] Initial scan complete. Watching for changes...
+Cleaning up stale database records...
+Database sync complete. Added 0 new files, removed 0 stale entries.
+Server initialized. Ready for playback.
+[TMDB] Starting metadata scrape for all unscraped media...
+[TranscodeManager] Starting: The Batman (2022).mkv
+ffmpeg version 6.0-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+[HWEncoder] Testing h264_nvenc...
+[HWEncoder] h264_nvenc is functional.
+[TMDB] Metadata scrape complete.
+[0mGET /api/transcode/queue [32m200[0m 11.325 ms - 249[0m
+[0mGET /api/transcode/queue [36m304[0m 3.837 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.553 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.380 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.040 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.212 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.666 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.955 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.637 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.592 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.222 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.262 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.544 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.742 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.730 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.336 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.042 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.789 ms - 249[0m
+[0mGET /api/recent [36m304[0m 4.508 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.155 ms - -[0m
+[0mGET /api/media [32m200[0m 9.066 ms - -[0m
+[0mGET /images/370?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.903 ms - -[0m
+[0mGET /images/333?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 17.676 ms - -[0m
+[0mGET /images/330?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.323 ms - -[0m
+[0mGET /images/331?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 26.495 ms - -[0m
+[0mGET /images/332?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 25.304 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.689 ms - -[0m
+[0mGET /images/334?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 23.985 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.996 ms - -[0m
+[0mGET /images/335?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 29.078 ms - -[0m
+[0mGET /images/337?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 16.445 ms - -[0m
+[0mGET /images/336?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.738 ms - -[0m
+[0mGET /images/371?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 27.585 ms - -[0m
+[0mGET /images/372?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 30.423 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.623 ms - 249[0m
+[0mGET /api/transcode/queue [36m304[0m 2.231 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.963 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.963 ms - 249[0m
+[0mGET /api/transcode/queue [36m304[0m 4.271 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.731 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 4.817 ms - 249[0m
+[0mGET /api/transcode/queue [36m304[0m 4.892 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.732 ms - 249[0m
+[0mGET /api/transcode/queue [36m304[0m 3.481 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.264 ms - 249[0m
+[0mGET /api/transcode/queue [36m304[0m 3.588 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.965 ms - 249[0m
+[0mGET /api/transcode/queue [36m304[0m 1.663 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.641 ms - 249[0m
+[0mGET /api/transcode/queue [36m304[0m 1.888 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.729 ms - 249[0m
+[0mGET /api/transcode/queue [36m304[0m 3.996 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.772 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.856 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.518 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.340 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.266 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.796 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.620 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 4.940 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 4.201 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.679 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 4.370 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.157 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.952 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.134 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.476 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.251 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.627 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.038 ms - -[0m
+[0mGET /api/media/376 [32m200[0m 3.013 ms - 989[0m
+[0mGET /api/media/376 [36m304[0m 2.952 ms - -[0m
+[0mGET /api/progress/376 [32m200[0m 3.926 ms - 14[0m
+[0mGET /api/progress/376 [36m304[0m 4.468 ms - -[0m
+[0mGET /api/recommendations/376 [32m200[0m 4.224 ms - 728[0m
+[0mGET /api/recommendations/376 [36m304[0m 3.869 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.405 ms - 250[0m
+[0mGET /api/recent [36m304[0m 8.219 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.994 ms - -[0m
+[0mGET /api/media [36m304[0m 31.143 ms - -[0m
+[0mGET /api/recent [36m304[0m 7.461 ms - -[0m
+[0mGET /api/media [36m304[0m 23.363 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.928 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.036 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.560 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 4.123 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.979 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 4.318 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.394 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.829 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.806 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.494 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.270 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.846 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.648 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.296 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.301 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.965 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 4.416 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.924 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.498 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.409 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.338 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.016 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.063 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.004 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.005 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.233 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.251 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.267 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.288 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.564 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.129 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.494 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.447 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.659 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.481 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.935 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.144 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.195 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.679 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.606 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.477 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.881 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 4.373 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.854 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.747 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.042 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.688 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.209 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.236 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.145 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.547 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 4.037 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.464 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.077 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.585 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.358 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.685 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.677 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.264 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.578 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.499 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.345 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.308 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.718 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.534 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 5.908 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.490 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.782 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.772 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.835 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.518 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.432 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.158 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.442 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.327 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.649 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.543 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.906 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.615 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.100 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.299 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.997 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.801 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.882 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.338 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.980 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.148 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.168 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.756 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.351 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.270 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.399 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.517 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.144 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.894 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.928 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.747 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.896 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.265 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.798 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.127 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.521 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.981 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.789 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.092 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.411 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.288 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.335 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.425 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.337 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.571 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.459 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.262 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.444 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.486 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.446 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.700 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.966 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 4.639 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 4.037 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.539 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.726 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.609 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.286 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.874 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.643 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.356 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.571 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.326 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.880 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.223 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.278 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.254 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.999 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.841 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.167 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.308 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.130 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.203 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.419 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.318 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.856 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.950 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.170 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.675 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.055 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.700 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.677 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.404 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.462 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.396 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.471 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.345 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 4.215 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.934 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.042 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 3.251 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.976 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.249 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.565 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.729 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.108 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.916 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.326 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.386 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.723 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.515 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.791 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.478 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 3.797 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.501 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.895 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.252 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.528 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.593 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.958 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 1.820 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 1.862 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.475 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.181 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.298 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.429 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 2.655 ms - 250[0m
+[0mGET /api/transcode/queue [36m304[0m 2.093 ms - -[0m
+[0mGET /api/transcode/queue [32m200[0m 5.545 ms - 251[0m
+[0mGET /api/transcode/queue [36m304[0m 2.803 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.883 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.717 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.516 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.718 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.244 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.350 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.525 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.049 ms - -[0m
+[TranscodeManager] Finished: The Batman (2022).mkv
+[0mGET /api/transcode/queue [32m200[0m 1.797 ms - 50[0m
+[0mGET /api/transcode/queue [36m304[0m 2.942 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.462 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.441 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.576 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.306 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.691 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.239 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.841 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.391 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.326 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.454 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.280 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.054 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.390 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.248 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.960 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.599 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.704 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.528 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.071 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.619 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.372 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.859 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.241 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.565 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.092 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.995 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.815 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.004 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.029 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.390 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.051 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.111 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.309 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.779 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.345 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.178 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.438 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.185 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.308 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.239 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.852 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.427 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.306 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.213 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.573 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.391 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.221 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.359 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.422 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.295 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.387 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.701 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.656 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.792 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.257 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 3.262 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.581 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.857 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 3.070 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.427 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 3.535 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.577 ms - -[0m
+[0mGET /api/stream-mode/376 [32m200[0m 5.882 ms - 95[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.313 ms - -[0m
+[0mGET /subtitles/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [33m404[0m 8.489 ms - 23[0m
+[0mGET /api/stream-mode/376 [36m304[0m 8.821 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 9.504 ms - 3360821960[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.547 ms - 2701595336[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.959 ms - 2698646216[0m
+[0mGET /api/stream-mode/376 [36m304[0m 1.707 ms - -[0m
+[Progress] New record: "The Batman" for user 1 at 1965s
+[0mPOST /api/progress [32m200[0m 43.676 ms - 16[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.351 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.647 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 3.398 ms - -[0m
+[0mGET /api/progress/376 [32m200[0m 2.297 ms - 17[0m
+[0mGET /api/progress/376 [36m304[0m 4.409 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.795 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 3.853 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.901 ms - -[0m
+[0mGET /api/recent [32m200[0m 4.470 ms - 991[0m
+[0mGET /api/transcode/queue [36m304[0m 2.986 ms - -[0m
+[0mGET /api/recent [36m304[0m 4.362 ms - -[0m
+[0mGET /api/media [36m304[0m 25.855 ms - -[0m
+[0mGET /api/media [36m304[0m 10.343 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.169 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.564 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.949 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.602 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.393 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.469 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.834 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.594 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.795 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.814 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.785 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.941 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.765 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.161 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.919 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.449 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.822 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.366 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.385 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.925 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.204 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.089 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.097 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.271 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.749 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.740 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.968 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.047 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.831 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.551 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.695 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.363 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.815 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.304 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.550 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.298 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.143 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.093 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.394 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.327 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.513 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.208 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.566 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.937 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.877 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.204 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.884 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.257 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.901 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.820 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.632 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.662 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.235 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.676 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.426 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.045 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.095 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.164 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.345 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.193 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.404 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.369 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.503 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.530 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.969 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.260 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.440 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.468 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.741 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.664 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.185 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.839 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.347 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.200 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.472 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.596 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.196 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.196 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.425 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.126 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.046 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.287 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.082 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.698 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.648 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.218 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.430 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.468 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.377 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.829 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.167 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.383 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.677 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.519 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.204 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.529 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.302 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.600 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.630 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.016 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.227 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.570 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.581 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.155 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.911 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.340 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.178 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.939 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.697 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.818 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.714 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.048 ms - -[0m
+
+--- Server Session Started: 2026-05-06T20:05:13.275Z ---
+
+[dotenv@17.0.1] injecting env (3) from .env – [tip] encrypt with dotenvx: https://dotenvx.com
+[TMDB] Scraper initialized.
+
+🚀 Media Server is running on port 5000!
+[Server] Initializing database...
+[TMDB] Loaded 7 items from metadata cache.
+Connected to the SQLite database.
+Database schema verified/initialized.
+[Server] Starting FileWatcher...
+[FileWatcher] Starting watcher on: E:\Projects\media_server\media_server\media
+Starting initial library scan...
+[FileWatcher] Initial scan complete. Watching for changes...
+Cleaning up stale database records...
+Database sync complete. Added 0 new files, removed 0 stale entries.
+Server initialized. Ready for playback.
+[TMDB] Starting metadata scrape for all unscraped media...
+[TMDB] Metadata scrape complete.
+[0mGET /api/transcode/queue [36m304[0m 14.524 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.720 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.291 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.818 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.746 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.998 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 5.373 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.684 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.227 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.477 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.837 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.567 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.237 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.360 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.706 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.935 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.742 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.516 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.188 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.596 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.492 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.015 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.706 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.377 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.410 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.256 ms - -[0m
+
+--- Server Session Started: 2026-05-06T20:07:31.207Z ---
+
+[dotenv@17.0.1] injecting env (3) from .env – [tip] encrypt with dotenvx: https://dotenvx.com
+[TMDB] Scraper initialized.
+
+🚀 Media Server is running on port 5000!
+[Server] Initializing database...
+[TMDB] Loaded 7 items from metadata cache.
+Connected to the SQLite database.
+Database schema verified/initialized.
+[Server] Starting FileWatcher...
+[FileWatcher] Starting watcher on: E:\Projects\media_server\media_server\media
+Starting initial library scan...
+[FileWatcher] Initial scan complete. Watching for changes...
+[0mGET /api/transcode/queue [36m304[0m 6.736 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.490 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.511 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.444 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.896 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.647 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.951 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.108 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.827 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.621 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.711 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.892 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.845 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.242 ms - -[0m
+Cleaning up stale database records...
+[0mGET /api/transcode/queue [36m304[0m 1.663 ms - -[0m
+Database sync complete. Added 0 new files, removed 0 stale entries.
+Server initialized. Ready for playback.
+[TMDB] Starting metadata scrape for all unscraped media...
+[0mGET /api/transcode/queue [36m304[0m 2.269 ms - -[0m
+[TMDB] Metadata scrape complete.
+[0mGET /api/transcode/queue [36m304[0m 1.243 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.942 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.554 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.248 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.462 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.459 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.349 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.339 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.469 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.526 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.260 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.417 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.583 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.267 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.483 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.903 ms - -[0m
+[0mGET /api/recent [36m304[0m 9.015 ms - -[0m
+[0mGET /api/media [36m304[0m 19.820 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.472 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.776 ms - -[0m
+[0mGET /images/330?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 42.701 ms - -[0m
+[0mGET /images/335?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 19.784 ms - -[0m
+[0mGET /images/370?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 38.324 ms - -[0m
+[0mGET /images/331?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 32.930 ms - -[0m
+[0mGET /images/334?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.487 ms - -[0m
+[0mGET /images/336?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 39.530 ms - -[0m
+[0mGET /images/332?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 27.495 ms - -[0m
+[0mGET /images/337?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 15.755 ms - -[0m
+[0mGET /images/333?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 28.557 ms - -[0m
+[0mGET /images/371?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 30.653 ms - -[0m
+[0mGET /images/372?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 29.222 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 3.523 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.837 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.737 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 3.763 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 6.352 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 5.339 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 3.716 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 3.452 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.543 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 3.863 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 11.237 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 8.734 ms - -[0m
+[0mGET /subtitles/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [33m404[0m 8.388 ms - 23[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 11.506 ms - 3360821960[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.135 ms - 2701595336[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.563 ms - 2698646216[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 5.566 ms - 2700645064[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 6.320 ms - 2707755720[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.673 ms - 2679411400[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.006 ms - 2675479240[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.164 ms - 2678100680[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.688 ms - 2674561736[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.590 ms - 2669646536[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.731 ms - 2662503112[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.330 ms - 2657784520[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.293 ms - 2652902088[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.006 ms - 2647757512[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.979 ms - 2641564360[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.169 ms - 2599850696[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.322 ms - 2590511816[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.787 ms - 2584711880[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.446 ms - 2582319816[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.859 ms - 2578780872[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.584 ms - 2577404616[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.527 ms - 2578387656[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.582 ms - 2552009416[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 1.805 ms - 2548044488[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.929 ms - 2542867144[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.836 ms - 2518880968[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 1.853 ms - 2513769160[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 1.989 ms - 2501350088[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 1.719 ms - 2494337736[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 1.585 ms - 2492240584[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 1.664 ms - 2489586376[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 1.529 ms - 2491585224[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 6.854 ms - 2464682696[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.635 ms - 2450592456[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.083 ms - 2443678408[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.978 ms - 2437812936[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.645 ms - 2424312520[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.861 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.276 ms - 2416349896[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.724 ms - 2413105864[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.724 ms - 2409534152[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.022 ms - 2404225736[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 5.632 ms - 2409009864[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 6.852 ms - 2414613192[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 5.966 ms - 2418774728[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.265 ms - 2432733896[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 7.332 ms - 2440532680[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.685 ms - 2459046600[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.117 ms - 2497581768[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 7.467 ms - 2504561352[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.997 ms - 2518291144[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.122 ms - 2545357512[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.774 ms - 2553483976[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.069 ms - 2593428168[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.851 ms - 2600964808[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.625 ms - 2602209992[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.574 ms - 2603553480[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.009 ms - 2606142152[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.314 ms - 2608009928[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.539 ms - 2655457992[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.252 ms - -[0m
+[0mPOST /api/progress [32m200[0m 41.791 ms - 16[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.228 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.349 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.513 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.897 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.375 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.486 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.615 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.581 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 1.847 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.313 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.198 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 9.282 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.540 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.986 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.161 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.357 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.138 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.439 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.922 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.107 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.288 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.057 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.937 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.581 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.454 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.516 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.174 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.917 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.820 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.754 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.715 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 1.860 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.532 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.405 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.483 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.818 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.775 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.393 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.988 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.813 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.849 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.176 ms - -[0m
+
+--- Server Session Started: 2026-05-06T20:11:38.287Z ---
+
+[dotenv@17.0.1] injecting env (3) from .env – [tip] encrypt with dotenvx: https://dotenvx.com
+[TMDB] Scraper initialized.
+
+🚀 Media Server is running on port 5000!
+[Server] Initializing database...
+[TMDB] Loaded 7 items from metadata cache.
+Connected to the SQLite database.
+Database schema verified/initialized.
+[Server] Starting FileWatcher...
+[FileWatcher] Starting watcher on: E:\Projects\media_server\media_server\media
+Starting initial library scan...
+[FileWatcher] Initial scan complete. Watching for changes...
+Cleaning up stale database records...
+Database sync complete. Added 0 new files, removed 0 stale entries.
+Server initialized. Ready for playback.
+[TMDB] Starting metadata scrape for all unscraped media...
+[TMDB] Metadata scrape complete.
+[0mGET /api/stream-mode/376 [36m304[0m 12.384 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.514 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.968 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 1.824 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.407 ms - -[0m
+[0mGET /transcoded/376_sprite.json [32m200[0m 4.845 ms - 66[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.418 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.661 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.531 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.141 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.477 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.960 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.292 ms - -[0m
+[0mGET /transcoded/376_sprite.jpg [32m200[0m 5.023 ms - 86763[0m
+[0mGET /api/media/376 [36m304[0m 2.842 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.625 ms - -[0m
+[0mGET /api/progress/376 [32m200[0m 2.034 ms - 17[0m
+[0mGET /api/progress/376 [36m304[0m 2.365 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 6.037 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 3.849 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 1.886 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.481 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.482 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.950 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.313 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.611 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.673 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 6.763 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.148 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.744 ms - -[0m
+[0mGET /transcoded/376_sprite.json [36m304[0m 1.209 ms - -[0m
+[0mGET /subtitles/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [33m404[0m 4.271 ms - 23[0m
+[0mGET /transcoded/376_sprite.json [36m304[0m 1.424 ms - -[0m
+[0mGET /transcoded/376_sprite.jpg [36m304[0m 2.952 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 7.487 ms - 3326350024[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 7.809 ms - 2603127496[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.152 ms - 2596508360[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.303 ms - 2587988680[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.043 ms - 2584318664[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.324 ms - 2555974344[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.835 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.003 ms - -[0m
+[0mPOST /api/progress [32m200[0m 57.529 ms - 16[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.412 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.848 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.570 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.333 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.364 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.082 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.141 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 8.524 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.286 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.840 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.802 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.917 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.996 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.766 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.655 ms - -[0m
+[0mGET /api/progress/376 [32m200[0m 2.441 ms - 17[0m
+[0mGET /api/progress/376 [36m304[0m 2.830 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 5.476 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.279 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 6.622 ms - 2520978120[0m
+[0mGET /api/media/376 [36m304[0m 2.182 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.441 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 5.936 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.780 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.897 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.771 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.663 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 5.400 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.445 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 5.851 ms - -[0m
+[0mGET /transcoded/376_sprite.json [36m304[0m 2.424 ms - -[0m
+[0mGET /subtitles/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [33m404[0m 4.009 ms - 23[0m
+[0mGET /transcoded/376_sprite.json [36m304[0m 1.616 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 6.697 ms - 3360821960[0m
+[0mGET /transcoded/376_sprite.jpg [36m304[0m 6.296 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.334 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 9.321 ms - -[0m
+[0mPOST /api/progress [32m200[0m 32.962 ms - 16[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.837 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.319 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.520 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.348 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.379 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.116 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 7.082 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.998 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.808 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.198 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.938 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.069 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.502 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.031 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.342 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.648 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.706 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.180 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.982 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.143 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.814 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.686 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.281 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.444 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.791 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.423 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.588 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.942 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.266 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.336 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.326 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.111 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.454 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.405 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.702 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.290 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 7.014 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.097 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.956 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.754 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.741 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.203 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.296 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.309 ms - -[0m
+[0mHEAD /transcoded/376_sprite.jpg [32m200[0m 2.226 ms - 86763[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.337 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.675 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.972 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.981 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.333 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.220 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.020 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.703 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.751 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.738 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.919 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.512 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.497 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.128 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.653 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.417 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.843 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.965 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.849 ms - -[0m
+[0mGET /transcoded/376_sprite.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m200[0m 3.480 ms - 86763[0m
+[0mGET /api/media/376 [36m304[0m 2.646 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.705 ms - -[0m
+[0mGET /api/progress/376 [32m200[0m 2.192 ms - 17[0m
+[0mGET /api/progress/376 [36m304[0m 3.308 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.177 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.067 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 1.464 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.773 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 3.970 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 7.004 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.809 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.568 ms - -[0m
+[0mGET /transcoded/376_sprite.json?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m200[0m 9.115 ms - 66[0m
+[0mGET /subtitles/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [33m404[0m 8.310 ms - 23[0m
+[0mGET /transcoded/376_sprite.json?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 1.015 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.012 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.467 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.597 ms - 2538345160[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.729 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.830 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.342 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.999 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.559 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 2.224 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.868 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.007 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 1.770 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.552 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.481 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.530 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.756 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.557 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.441 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 5.332 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 3.745 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 7.767 ms - 3315864264[0m
+[0mGET /api/media/376 [36m304[0m 2.088 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.810 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 2.657 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.315 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.354 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.556 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.828 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 3.179 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.043 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.680 ms - -[0m
+[0mGET /transcoded/376_sprite.json?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 0.885 ms - -[0m
+[0mGET /subtitles/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [33m404[0m 4.147 ms - 23[0m
+[0mGET /transcoded/376_sprite.json?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 0.867 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 7.668 ms - 3360821960[0m
+[0mGET /transcoded/376_sprite.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 1.178 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.788 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.794 ms - -[0m
+[0mPOST /api/progress [32m200[0m 24.274 ms - 16[0m
+[0mGET /api/stream-mode/376 [36m304[0m 11.903 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.167 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 3.261 ms - -[0m
+[0mGET /api/progress/376 [32m200[0m 2.280 ms - 17[0m
+[0mGET /api/progress/376 [36m304[0m 2.889 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 6.065 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.798 ms - -[0m
+
+--- Server Session Started: 2026-05-06T20:23:58.257Z ---
+
+[dotenv@17.0.1] injecting env (3) from .env – [tip] encrypt with dotenvx: https://dotenvx.com
+[TMDB] Scraper initialized.
+
+🚀 Media Server is running on port 5000!
+[Server] Initializing database...
+[TMDB] Loaded 7 items from metadata cache.
+Connected to the SQLite database.
+Database schema verified/initialized.
+[Server] Starting FileWatcher...
+[FileWatcher] Starting watcher on: E:\Projects\media_server\media_server\media
+Starting initial library scan...
+[FileWatcher] Initial scan complete. Watching for changes...
+Cleaning up stale database records...
+Database sync complete. Added 0 new files, removed 0 stale entries.
+Server initialized. Ready for playback.
+[TMDB] Starting metadata scrape for all unscraped media...
+[TMDB] Metadata scrape complete.
+
+--- Server Session Started: 2026-05-06T20:28:34.901Z ---
+
+[dotenv@17.0.1] injecting env (3) from .env – [tip] encrypt with dotenvx: https://dotenvx.com
+[TMDB] Scraper initialized.
+
+🚀 Media Server is running on port 5000!
+[Server] Initializing database...
+Connected to the SQLite database.
+[TMDB] Loaded 7 items from metadata cache.
+Database schema verified/initialized.
+[Server] Starting FileWatcher...
+[FileWatcher] Starting watcher on: E:\Projects\media_server\media_server\media
+Starting initial library scan...
+[FileWatcher] Initial scan complete. Watching for changes...
+Cleaning up stale database records...
+Database sync complete. Added 0 new files, removed 0 stale entries.
+Server initialized. Ready for playback.
+[TMDB] Starting metadata scrape for all unscraped media...
+[TMDB] Metadata scrape complete.
+[0mGET /api/media/376 [36m304[0m 13.507 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 4.585 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.977 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 5.377 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 4.637 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 3.693 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 7.161 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.246 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 9.848 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.815 ms - -[0m
+[0mGET /transcoded/376_sprite.json?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m200[0m 10.062 ms - 81[0m
+[0mGET /subtitles/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [33m404[0m 10.030 ms - 23[0m
+[0mGET /transcoded/376_sprite.json?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 2.080 ms - -[0m
+[0mGET /transcoded/376_sprite.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m200[0m 5.665 ms - 601105[0m
+[0mGET /api/stream-mode/376 [36m304[0m 8.416 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 9.468 ms - -[0m
+[0mPOST /api/progress [32m200[0m 83.719 ms - 16[0m
+[0mGET /api/stream-mode/376 [36m304[0m 3.023 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 13.575 ms - 3323925192[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 4.676 ms - 1993347784[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.565 ms - 1990660808[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.125 ms - -[0m
+[0mPOST /api/progress [32m200[0m 30.807 ms - 16[0m
+[0mGET /api/media/376 [36m304[0m 2.735 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.174 ms - -[0m
+[0mGET /api/progress/376 [32m200[0m 2.477 ms - 17[0m
+[0mGET /api/progress/376 [36m304[0m 2.998 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 3.864 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 6.054 ms - -[0m
+[0mGET /api/recent [36m304[0m 2.750 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.889 ms - -[0m
+[0mGET /api/media [36m304[0m 18.522 ms - -[0m
+[0mGET /api/recent [36m304[0m 2.623 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.840 ms - -[0m
+[0mGET /api/media [36m304[0m 7.609 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.866 ms - -[0m
+[0mGET /images/330?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 4.406 ms - -[0m
+[0mGET /images/370?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 4.524 ms - -[0m
+[0mGET /images/332?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 6.866 ms - -[0m
+[0mGET /images/331?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 10.967 ms - -[0m
+[0mGET /images/371?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 2.810 ms - -[0m
+[0mGET /images/372?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 6.871 ms - -[0m
+[0mGET /images/333?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 4.064 ms - -[0m
+[0mGET /images/334?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 9.279 ms - -[0m
+[0mGET /images/335?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 6.823 ms - -[0m
+[0mGET /images/336?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 6.883 ms - -[0m
+[0mGET /images/337?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 4.839 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.850 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.442 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.233 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.131 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.454 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.227 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.338 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.259 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.275 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.183 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.535 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.065 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.081 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.738 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.689 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.714 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.414 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.781 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.947 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.295 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.994 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.346 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.934 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 6.095 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.648 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.624 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.119 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.795 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.664 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.101 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.899 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.028 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.294 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.234 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.591 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.066 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.812 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.556 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.282 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.143 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.396 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.006 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.442 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.696 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.178 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.442 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.009 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.235 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.945 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.180 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.262 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.509 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.351 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.157 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.893 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.161 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.373 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.660 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.015 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.473 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.439 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.212 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.723 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.431 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.535 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.274 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.191 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.120 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.441 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.857 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.002 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.309 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.688 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.934 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.505 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.493 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.075 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.232 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 3.998 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 3.916 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 2.446 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 3.337 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 3.528 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 5.958 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 5.236 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 4.276 ms - -[0m
+[0mGET /transcoded/376_sprite.json?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 8.489 ms - -[0m
+[0mGET /subtitles/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [33m404[0m 6.912 ms - 23[0m
+[0mGET /transcoded/376_sprite.json?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 1.108 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 19.166 ms - 3360821960[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 1.823 ms - 1993347784[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 2.744 ms - 1989153480[0m
+[0mGET /transcoded/376_sprite.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [36m304[0m 2.466 ms - -[0m
+[0mGET /api/stream-mode/376 [36m304[0m 6.929 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 1.721 ms - -[0m
+[0mGET /api/media/376 [36m304[0m 3.091 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 3.447 ms - -[0m
+[0mGET /api/progress/376 [36m304[0m 2.591 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 5.238 ms - -[0m
+[0mGET /api/recommendations/376 [36m304[0m 4.655 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.329 ms - -[0m
+[0mGET /api/recent [36m304[0m 3.821 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.814 ms - -[0m
+[0mGET /api/recent [36m304[0m 5.372 ms - -[0m
+[0mGET /api/media [36m304[0m 22.915 ms - -[0m
+[0mGET /api/media [36m304[0m 7.246 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.638 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.934 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.255 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.775 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.500 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.869 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.379 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.974 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.682 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.548 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.851 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.499 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.006 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.527 ms - -[0m
+[0mGET /stream/376?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImF2YXRhcl91cmwiOm51bGwsImlhdCI6MTc3ODAxNjcyNCwiZXhwIjoxNzc4MTAzMTI0fQ.HgjssygN3lnEf_1OYEDg7xkC8uejar8UGOtJ5r1vMP4 [32m206[0m 3.006 ms - 1992299208[0m
+[0mGET /api/transcode/queue [36m304[0m 1.218 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.222 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.258 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.607 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.665 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.456 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.115 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 2.472 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.603 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.070 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.218 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.025 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.400 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.226 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.497 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.384 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.995 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.470 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.218 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 1.550 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.277 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.280 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.430 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 3.525 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.663 ms - -[0m
+[0mGET /api/transcode/queue [36m304[0m 4.409 ms - -[0m

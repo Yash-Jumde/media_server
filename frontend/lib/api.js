@@ -293,6 +293,16 @@ export function subtitleUrl(id) {
   return `${API_BASE}/subtitles/${id}?token=${token}`;
 }
 
+export function spriteUrl(id) {
+  const token = getToken();
+  return `${API_BASE}/transcoded/${id}_sprite.jpg?token=${token}`;
+}
+
+export function spriteMetaUrl(id) {
+  const token = getToken();
+  return `${API_BASE}/transcoded/${id}_sprite.json?token=${token}`;
+}
+
 export function formatFileSize(bytes) {
   if (!bytes) return '0 B';
   if (bytes < 1024) return bytes + ' B';

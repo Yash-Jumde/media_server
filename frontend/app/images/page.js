@@ -30,7 +30,11 @@ export default function ImagesPage() {
       if (isInitial) {
         setItems(data.items || []);
       } else {
-        setItems(prev => [...prev, ...(data.items || [])]);
+        setItems(prev => {
+          const existingIds = new Set(prev.map(item => item.id));
+          const newItems = (data.items || []).filter(item => !existingIds.has(item.id));
+          return [...prev, ...newItems];
+        });
       }
       
       setTotalPages(data.totalPages || 1);
